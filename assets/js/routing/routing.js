@@ -14,7 +14,9 @@ import { userData } from "../models/user.js";
 import { dinamicRouteDisplay } from "./dinamicRouting.js";
 //home page content
 import { homeContent } from "../pages/home/MAIN.js";
-import { validationFormContact } from "../validation/formContact.js";
+import { displaySingleProductPage } from "../pages/product/MAIN.js";
+import { findProductByCategoryAndName } from "../utils/products.js";
+import { shopContent } from "../pages/shop/MAIN.js";
 
 //I'm not implementing this until finishing the project, since local server is unable to redirect all petitions to my index.html without using backend server utilities
 
@@ -46,6 +48,9 @@ export const updateContent = async() => {
     const content = document.getElementById("main");
     //section with the corresponding ID
     const section = document.getElementById(sectionId);
+    
+    //fetch product data
+    let productsList = await fetchInternalData("assets/js/json/products-list.json", "products");
 
 
     //■■■■■■■■■■■■■■■■■■■■ hash system routing ■■■■■■■■■■■■■■■■■■■■//
@@ -69,6 +74,13 @@ export const updateContent = async() => {
 
                 //update home content
                 content.innerHTML = homeContent;
+
+                //fetch to home data
+                const homeFetchUtils = async () => {
+                }
+
+                //apply fetch to home data
+                homeFetchUtils();
 
                 //include footer
                 footer(
@@ -109,6 +121,52 @@ export const updateContent = async() => {
 
             break;
 
+            
+            //store page
+            case 'tienda':
+
+                //update title attribute of page
+                document.title =  ` Bakery · Shop Online `;
+
+                //include proper navbar
+                navBar(userData.isSessionSet);
+
+                //update page content
+                content.innerHTML = shopContent;
+
+                //products container
+                const shopContainerTrendingProducts = document.getElementById("container-trending-products");
+
+                //fetch to shop data
+                const shopFetchUtils = async () => {
+                    let products= await fetchInternalData("assets/js/json/products-list.json", "products"); 
+
+                    displayProductList(products, shopContainerTrendingProducts);
+                }
+
+                //apply fetch to shop data
+                shopFetchUtils();
+
+                //include footer
+                footer();
+                
+            break;
+            
+            //products page
+            case 'productos':
+
+                //update title attribute of page
+                document.title =  ` Bakery · Catalogo`;
+
+                //include proper navbar
+                navBar(userData.isSessionSet);
+
+                content.innerHTML = "";
+
+                //include footer
+                footer();
+            break;
+
             //dinamic routes and not found page
             default:
 
@@ -116,27 +174,25 @@ export const updateContent = async() => {
 
                 // Dynamic URL matching with regular expression
 
-                    // const tiendaProductoPattern = /^tienda\/producto\/([^\/]+)\/([^\/]+)$/;
+                    const tiendaProductoPattern = /^tienda\/producto\/([^\/]+)\/([^\/]+)$/;
 
                 //URL has to be in the form: tienda/producto/category/name-of-product
 
                 // Check if pattern for dinamic route of product's page is match (w/ injected dependencies into productRouteHandler)
 
-                    // const singleProductPageRouteHandler = await dinamicRouteDisplay(hash, tiendaProductoPattern, async (routeParams) => {
-                    //     await productRouteHandler(
-                    //         routeParams,
-                    //         findProductByCategoryAndName,
-                    //         userData,
-                    //         redirectToPage,
-                    //         setUserDataFromSessionData,
-                    //         notFoundMessage,
-                    //         displaySingleProductPage
-                    //     );
-                    // });
+                    const singleProductPageRouteHandler = await dinamicRouteDisplay(hash, tiendaProductoPattern, async (routeParams) => {
+                        await productRouteHandler(
+                            routeParams,
+                            findProductByCategoryAndName,
+                            userData,
+                            redirectToPage,
+                            setUserDataFromSessionData,
+                            notFoundMessage,
+                            displaySingleProductPage
+                        );
+                    });
 
                 //■■■■■■■■■■■■■■■■■■■■ if dinamic routes are not matched display not found page ■■■■■■■■■■■■■■■■■■■■//
-
-                const singleProductPageRouteHandler = false;
 
                 if (singleProductPageRouteHandler) {
 
