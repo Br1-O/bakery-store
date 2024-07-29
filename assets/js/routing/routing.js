@@ -86,36 +86,79 @@ export const updateContent = async() => {
                 footer(
                     true,
                     {
-                        logo: "assets/resources/images/imgs/logo.jpeg",
-                        logoAltText: "main logo",
+                        logo: "",
+                        logoAltText: "",
                         socialMediaLinks: [
                             {
-                                iconClass: "bx bxl-linkedin",
+                                iconClass: "bx bxl-facebook",
                                 link: "https://www.linkedin.com/in/bortuno",
                                 ariaLabel: "LinkedIn"
                             },
                             {
-                                iconClass: "bx bxl-github",
+                                iconClass: "bx bxl-instagram",
                                 link: "https://github.com/Br1-O?tab=repositories",
                                 ariaLabel: "Github"
                             },
                             {
-                                iconClass: "bx bxl-whatsapp",
+                                iconClass: "bx bxl-twitter",
                                 link: "https://wa.me/5491112345678",
                                 ariaLabel: "Whatsapp"
-                            },
-                            {
-                                iconClass: "bx bx-envelope",
-                                link: "mailto:bruno.ortuno2@gmail.com",
-                                ariaLabel: "Email"
                             }
                         ],
-                        copyright: {
-                            pageName: "",
-                            date: "2024",
-                            authorName: "Bruno O. Ortuño",
-                            authorLink: "https://www.linkedin.com/in/bortuno"
-                        }
+                        columns:
+                        [
+                            {
+                                title: "",
+                                links:
+                                [
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Privace Policy"
+                                    },
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Items & Conditions"
+                                    },
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Cookie Policy"
+                                    }
+                                ]
+                            },
+                            {
+                                title: "",
+                                links:
+                                [
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "About"
+                                    },
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Menu"
+                                    },
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Delivery"
+                                    }
+                                ]
+                            },
+                            {
+                                title: "",
+                                links:
+                                [
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Gallery"
+                                    },
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Contact"
+                                    }
+                                ]
+                            }
+                        ]
+                    
                     }                    
                 );
 
