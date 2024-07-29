@@ -10,13 +10,21 @@ import { maxLengthValidation, minLengthValidation, phoneNumberValidation, emailV
 //page not found content
 import { notFoundMessage } from "../pages/notFound404.js";
 //user model to control state
-import { userData } from "../models/user.js";
+import { userData } from "../models/classes/user.js";
 import { dinamicRouteDisplay } from "./dinamicRouting.js";
 //home page content
 import { homeContent } from "../pages/home/MAIN.js";
 import { displaySingleProductPage } from "../pages/product/MAIN.js";
+import { displayProducts } from "../pages/shop/products.js";
 import { findProductByCategoryAndName } from "../utils/products.js";
 import { shopContent } from "../pages/shop/MAIN.js";
+import { subtitle } from "../components/text/titles.js";
+import { anchor } from "../components/navs/anchor.js";
+import { dropdown } from "../components/navs/dropDown.js";
+import { navbar } from "../components/navs/navBar.js";
+import { productCard } from "../components/cards/productCard.js";
+import { formSelect } from "../components/forms/select.js";
+
 
 //I'm not implementing this until finishing the project, since local server is unable to redirect all petitions to my index.html without using backend server utilities
 
@@ -75,13 +83,6 @@ export const updateContent = async() => {
                 //update home content
                 content.innerHTML = homeContent;
 
-                //fetch to home data
-                const homeFetchUtils = async () => {
-                }
-
-                //apply fetch to home data
-                homeFetchUtils();
-
                 //include footer
                 footer(
                     true,
@@ -121,7 +122,6 @@ export const updateContent = async() => {
 
             break;
 
-            
             //store page
             case 'tienda':
 
@@ -132,7 +132,13 @@ export const updateContent = async() => {
                 navBar(userData.isSessionSet);
 
                 //update page content
-                content.innerHTML = shopContent;
+                content.innerHTML = shopContent(
+                    subtitle,
+                    anchor,
+                    dropdown,
+                    navbar,
+                    formSelect
+                );
 
                 //products container
                 const shopContainerTrendingProducts = document.getElementById("container-trending-products");
@@ -141,15 +147,12 @@ export const updateContent = async() => {
                 const shopFetchUtils = async () => {
                     let products= await fetchInternalData("assets/js/json/products-list.json", "products"); 
 
-                    displayProductList(products, shopContainerTrendingProducts);
+                    displayProducts(products, shopContainerTrendingProducts, productCard);
                 }
 
                 //apply fetch to shop data
                 shopFetchUtils();
-
-                //include footer
-                footer();
-                
+              
             break;
             
             //products page

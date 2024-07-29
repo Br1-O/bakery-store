@@ -18,7 +18,7 @@ table { border-collapse: collapse; border-spacing: 0;}
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--logo-bg-color);
+  background-color: var(--main-bg-color);
   font-family: var(--font-main, "sans-serif");
 }
 
@@ -30,7 +30,7 @@ textarea {
 
 :root{
     /* --main-bg-color: rgb(224, 187, 228);*/
-    --main-bg-color: rgb(67, 75, 82);
+    --main-bg-color: rgb(0, 0, 0);
     /* --border-color: rgba(155, 88, 218, 0.906);*/
     --border-color: rgb(237, 236, 238);
     --border-hover-color: rgb(237, 236, 238);
@@ -39,7 +39,7 @@ textarea {
     --shadow-color: rgb(130, 21, 158);
     --logo-bg-color: rgb(67, 75, 82);
     
-    --font-main: 'Jost';
+    --font-main: 'Josefin-sans';
 }
 
 /* ■■■■­■■­■■­■■­■■ animations  ■■■■­■■­■■­■■­■■ */
@@ -692,6 +692,16 @@ textarea {
   -webkit-backdrop-filter: blur(5px) !important;
 }
 
+.text-hover-offset-effect:hover{
+  color: var(--font-hover-color);
+  font-size: 2rem;
+  font-family: 'Jost', 'sans-serif';
+  font-weight: 300;
+  padding: 10px 20px;
+
+  text-shadow: 2px 2px 5px var(--shadow-color), 20px 20px 2px rgb(79, 79, 80);
+}
+
 /* smooth transition */
 .smooth-transition {
   transition: all 0.5s ease-in-out !important;
@@ -846,27 +856,26 @@ body{
   box-shadow: 2px 2px 5px var(--shadow-color);
 }
 
-.navbar-nav{
-  margin: 0px 10%;
-}
-
 .navbar-nav a{
-  color: var(--font-color);
+  color: var(--font-hover-color);
   font-size: 2rem;
   font-family: 'Jost', 'sans-serif';
-  font-weight: 300;
-  padding: 10px 20px;
+  transition: all .4s ease;
+}
+
+#navBarCategories{
+  padding-bottom: 0px !important;
+}
+
+#navBarCategories a{
+  color: var(--font-hover-color);
+  font-size: 1.25rem !important;
+  font-family: 'Jost', 'sans-serif';
   transition: all .4s ease;
 }
 
 .navbar-nav a:hover{
-  color: var(--font-hover-color);
-  font-size: 2rem;
-  font-family: 'Jost', 'sans-serif';
-  font-weight: 300;
-  padding: 10px 20px;
-
-  text-shadow: 2px 2px 5px var(--shadow-color), 20px 20px 2px rgb(79, 79, 80);
+  filter: brightness(90);
 }
 
 .nav-icons{
@@ -927,6 +936,38 @@ section{
   font-family: var(--font-main, "sans-serif");
   color:var(--font-hover-color);
 }
+
+/* ■■■■­■■­■■­■■­■■ Product card ■■■■­■■­■■­■■­■■ */
+
+.product-card{
+  height: max(25vmax, 25rem);
+  color: var(--font-hover-color);
+}
+
+.card-image-container {
+  width: 100%;
+  height: 75%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.product-card:hover{
+  filter:brightness(1.15);
+  border: solid 1px var(--font-hover-color);
+}
+
+
+
 
 /* ■■■■­■■­■■­■■­■■ Downwards arrow to next section ■■■■­■■­■■­■■­■■ */
 
