@@ -51,7 +51,7 @@ const footerContent = (
     let footer = 
     `      
     <!-- Footer -->
-    <footer class="d-flex flex-column justify-content-center align-items-center" id="contact">
+    <footer class="d-flex flex-row justify-content-star" id="contact">
     `;
 
     //check if there are extra columns
@@ -61,71 +61,14 @@ const footerContent = (
 
     if (thereIsExtraColumns) {
 
-        //select footer parent container for columns based on the presence of extra columns
-        footer += 
-        `      
-            <div class="w-100 p-2 d-flex flex-column justify-content-center flex-md-row align-items-baseline gap-5">
-        `;
-
-        //add logo to footer
-        if(content.logo) {
-
-            footer += 
-            `
-                <img src="${content.logo}" alt="${content.logoAltText}">
-            `;
-        }
-
-        //add basic contact data to footer
-        if (content.basicContactInfo) {
-            
-            footer += 
-            `
-                <div class="d-flex flex-column p-1 gap-3 flex-wrap" id="contact-info">
-            `
-
-            for (const contactData of content.basicContactInfo) {
-
-                footer += 
-                `
-                        <a href="${contactData.anchorLink}">
-                            ${contactData.anchorText}
-                        </a>
-                `;
-            }
-        }
-
-        //add social media icons with links and arial labels
-        if (content.socialMediaLinks) {
-
-            footer += 
-            `
-                    <div class="d-flex flex-row justify-content-start align-items-center gap-3 flex-wrap mt-1">
-            `;
-            
-            for (const socialMediaData of content.socialMediaLinks) {
-                
-                footer += 
-                `
-                            <a href="${socialMediaData.link}" aria-label="${socialMediaData.ariaLabel}">
-                                <i class="${socialMediaData.iconClass}"></i>
-                            </a>
-                `;
-            }
-
-            footer +=
-            `
-                        </div>
-                    </div>
-            `;
-        }
+       
 
         //add extra contact data and navigation columns
         for (const column of content.columns) {
 
             footer += 
-            `       <div class="d-flex flex-column p-1 gap-3 flex-wrap">
-                        <h4 class="h4 mb-1 fw-bold"> ${column.title} </h4>
+            `       <div class="w-50 d-flex  ms-4 mb-4 flex-column p-1 gap-4 flex-wrap">
+                        <h4 class="h4 mb-2  fw-bold"> ${column.title} </h4>
             `;
 
             for (const link of column.links) {
@@ -218,10 +161,7 @@ const footerContent = (
 
         //add social media icons
 
-        footer +=
-        `
-            <h4 class="h4 fw-bold"> Encontrame también en: </h4>
-        `
+       
 
         footer += 
         `
@@ -245,7 +185,38 @@ const footerContent = (
                 </div>
         `;
     }
+     //select footer parent container for columns based on the presence of extra columns
+     footer += 
+     `      
+         <div class="w-100 mt-4 p-2 d-flex flex-column justify-content-centerflex-md-row align-items-center gap-4">
+     `;
 
+    
+
+     //add social media icons with links and arial labels
+     if (content.socialMediaLinks) {
+
+         footer += 
+         `
+                 <div class="d-flex flex-row justify-content-start align-items-center gap-3 flex-wrap mt-1">
+         `;
+         
+         for (const socialMediaData of content.socialMediaLinks) {
+             
+             footer += 
+             `
+                         <a href="${socialMediaData.link}" aria-label="${socialMediaData.ariaLabel}">
+                             <i class="${socialMediaData.iconClass}"></i>
+                         </a>
+             `;
+         }
+
+         footer +=
+         `
+                     </div>
+                 </div>
+         `;
+     }
     //add newsletter column
 
     if (content.newsLetter) {
@@ -297,8 +268,8 @@ export const footer = (
         basicContactInfo: 
         [
             {
-                anchorLink: "",
-                anchorText: ""
+                anchorLink: "Contact",
+                anchorText: "Contact"
             }
         ],
         socialMediaLinks: 
@@ -345,7 +316,7 @@ export const footer = (
     //display footer is show option is true
     if (show) {
         footerSection.innerHTML = 
-        
+
         footerContent(contentData);
     }else{
         footerSection.innerHTML = "";

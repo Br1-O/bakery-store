@@ -40,7 +40,9 @@ textarea {
     --logo-bg-color: rgb(67, 75, 82);
     
     --font-main: 'Josefin-sans';
-}
+    --footer-bg-color: rgb(17, 17, 17);
+    --footer-h4-color: white;
+  }
 
 /* ■■■■­■■­■■­■■­■■ animations  ■■■■­■■­■■­■■­■■ */
 
@@ -1020,7 +1022,7 @@ section{
 /* ■■■■­■■­■■­■■­■■ FOOTER ■■■■­■■­■■­■■­■■ */
 
 footer{
-  background-color: var(--main-bg-color);
+  background-color: var(--footer-bg-color);
   color: var(--logo-bg-color);
 }
 
@@ -1039,18 +1041,18 @@ footer img{
 }
 
 footer h4{
-  color: var(--logo-bg-color) !important;
+  color: var(--footer-h4-color) !important;
 }
 
 footer a{
-  color: var(--logo-bg-color);
+  color: var(--footer-h4-color);
   overflow-wrap:break-word;
   transition: all .4s ease;
   cursor: pointer;
 }
 
 footer a:hover{
-  text-decoration: underline;
+  text-decoration: none;
   color: var(--border-color);
   transform: scale(1.025);
 }
@@ -1064,7 +1066,7 @@ footer a{
 }
 
 footer i{
-  color: var(--logo-bg-color);
+  color: var(--footer-h4-color);
   font-size: 2rem;
 
   transition: all .4s ease;
@@ -1116,7 +1118,11 @@ footer i:hover{
 
     #contact{
       height: auto !important;
+      display: flex !important;
+      flex-direction: column !important ; 
+      align-items: center;
     }
+   
 
   }
 
@@ -1140,5 +1146,9 @@ footer i:hover{
     /* ­■■­■■­■■ SECTIONS HEIGHT ­■■­■■­■■ */
     section {
       height: 90vh !important;
+    }
+    footer{
+      display: flex; 
+      flex-direction: column;
     }
   }
