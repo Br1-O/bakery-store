@@ -1,3 +1,5 @@
+import { btnWithIcon } from "../btns/btnWithIcon.js";
+
 export const productCard = (
     product = 
     {
@@ -37,7 +39,12 @@ export const productCard = (
             <div class="input-group d-flex flex-row justify-content-around align-items-center h-content">
                 <input type="number" class="form-control w-25 h-100" id="numberInput" value="0" min="0">
 
-                <input class="btn btn-dark w-75  text-wrap" type="submit" value="Agregar a carrito">
+                ${btnWithIcon(
+                    {
+                        id: "btn-add-to-card",
+                        text: "Agregar a carrito"
+                    }
+                )}
             </div>
 
         </div>
