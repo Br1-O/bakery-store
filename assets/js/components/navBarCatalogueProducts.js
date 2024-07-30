@@ -1,48 +1,54 @@
-import { anchor } from "./navs/anchor.js";
-import { dropdown } from "./navs/dropDown.js";
 import { navbar } from "./navs/navBar.js";
+import { ProductUtils } from "../models/utils/productUtils.js";
 
-export const navBarCatalogueProducts = () => {
+export const navBarCatalogueProducts = (anchor, dropdown) => {
 
-    //anchors for dropdowns and navBar
-    let anchor1 = anchor({anchorText: "Pebetes", anchorLink: "#tienda/panaderia/pebetes"});
-    let anchor2 = anchor({anchorText: "Sacramentos", anchorLink: "#tienda/panaderia/sacramentos"});
-    let anchor3 = anchor({anchorText: "Bizcochitos de grasa", anchorLink: "#tienda/panaderia/bizcochitos"});
-    let anchor4 = anchor({anchorText: "Pan blanco", anchorLink: "#tienda/panaderia/pan-blanco"});
-    let anchor5 = anchor({anchorText: "Pan integral", anchorLink: "#tienda/panaderia/pan-integral"});
-    let anchor6 = anchor({anchorText: "Pan integral con semillas", anchorLink: "#tienda/panaderia/pan-integral-con-semillas"});
-    let anchor7 = anchor({anchorText: "Fugazzas", anchorLink: "#tienda/panaderia/fugazzas"});
+    // ■■■■■■■■■■■■■■ Data for categories navbar ■■■■■■■■■■■■■■ //
 
-    //array for anchors
-    let items = [anchor1, anchor2, anchor3, anchor4, anchor5, anchor6, anchor7];
+    //menu array
+    let menu = [];
 
-    let item2 = [anchor1, anchor2, anchor3, anchor4, anchor5, anchor6, anchor7];
+    //get all main categories name for menu of categories navbar
+    for (let category of (ProductUtils.mainCategoriesNameList)) {
+        
+        //get all products inside each main category
+        let allProductsInCategory = (ProductUtils.getAllProductsInCategory(category));
 
+        //array for anchor components of each product
+        let anchorItemsForCategory = [];
 
-    let dropdown1 = 
-    dropdown(
-        {
-          titleCategoryText: "Panaderia",
-          titleCategoryLink: "#tienda/panaderia",
-          groupOptions: items
+        //for each product in the category push its anchor component in the array
+        for (const product of allProductsInCategory) {
+        
+            anchorItemsForCategory.push(anchor({anchorText: product.name, anchorLink: product.link}));
         }
-    );
 
-    let dropdown2 = 
-    dropdown(
-        {
-          titleCategoryText: "Pasteleria",
-          titleCategoryLink: "#tienda/pasteleria",
-          groupOptions: item2
+        //change name of category to proper category name if needed
+        if (category === "casero") {
+            
+            category = "para hacer en casa";
         }
-    );
 
+        //capitalize first letter of the category name
+        category = category.charAt(0).toUpperCase() + category.slice(1);
 
-    let menu = [dropdown1, dropdown2];
+        //push into the menu array the dropdown component with all the anchors for the category, the category name and the category link
+        menu.push(
+            dropdown(
+                {
+                titleCategoryText: category,
+                titleCategoryLink: "#tienda/" + category,
+                groupOptions: anchorItemsForCategory
+                }
+            )
+        );
+    }
 
+    //create the navbar component with the menu array as parameter
     let nav =
     navbar(
         {
+            id: "navBarCategories",
             items: menu,
             tabs: true,
             itemsPositionNavBar: "around",
@@ -50,7 +56,7 @@ export const navBarCatalogueProducts = () => {
             gapNavBar: "gap-1",
             gapTextMenu: "gap-1",
             padding: "p-1",
-            bgColor: ".bg-glass-effect",
+            bgColor: "",
             textColor: "var(--font-hover-color)",
             textFont: "var(--font-main)",
             textSize: "fs-5",
@@ -59,5 +65,25 @@ export const navBarCatalogueProducts = () => {
         }
     );
 
+    //add proper container for this specific navbar
+    nav =
+    `
+    <nav id="navBarCategories" class="navbar navbar-expand-lg bg-body-tertiary d-flex flex-row justify-content-center align-items-center gap-2 fs-2 p-3 my-5 z-3 bg-glass-effect w-100">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarCategoriesMenu" aria-controls="navBarCategoriesMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navBarCategoriesMenu">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    ${nav}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    `;
+
+    //return navbar component
     return nav;
 }

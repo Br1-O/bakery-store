@@ -16,8 +16,10 @@ export const productCard = (
     `
     <div id="${product.id}" class="card product-card col-11 col-md-4 col-lg-3 p-0 bg-glass-effect" aria-label="${product.ariaLabel}">
 
-        <div class="card-body d-flex flex-column justify-content-center align-items-start flex-wrap">
-            <h5 class="card-title align-self-center fw-bold fs-5"> ${product.name} </h5>
+        <div class="card-body container-product-card-title d-flex flex-column justify-content-center align-items-start flex-wrap">
+            <a class="text-decoration-none card-title align-self-center fw-bold fs-5" href="${product.link}">
+                <h5> ${product.name} </h5>
+            </a>
         </div>
 
         <div class="card-image-container h-75 w-100">

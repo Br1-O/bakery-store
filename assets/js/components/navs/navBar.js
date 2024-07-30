@@ -2,6 +2,26 @@ export const navbar = (
     navData = {
         id: "",
         items: [],
+        itemsPositionNavBar: "",
+        itemsPositionTextMenu: "",
+        gapNavBar: "",
+        gapTextMenu: "",
+        padding: "",
+        bgColor: "",
+        textColor: "",
+        textFont: "",
+        textSize: "",
+        logo: "",
+        tabs: false,
+        sticky: false
+        }
+) => {
+
+    //default values for the nav tag
+    const defaultData =
+    {
+        id: "",
+        items: [],
         itemsPositionNavBar: "around",
         itemsPositionTextMenu: "center",
         gapNavBar: "gap-1",
@@ -14,8 +34,10 @@ export const navbar = (
         logo: "",
         tabs: false,
         sticky: false
-        }
-) => {
+    };
+    
+    //merge default values with provided data
+    navData = { ...defaultData, ...navData };
 
     let navClass = `d-flex flex-row justify-content-${navData.itemsPositionNavBar} align-items-center ${navData.gapNavBar} ${navData.sticky ? 'position-fixed' : ''} ${navData.textSize} ${navData.padding}`;
     let navStyle = `color: ${navData.textColor}; font-family: ${navData.textFont};`;
@@ -30,7 +52,7 @@ export const navbar = (
 
     let nav = 
     `
-    <nav class="${navClass} ${navBgClass}" style="${navStyle} ${navBgStyle}">
+    <nav id="${navData.id}" class="${navClass} ${navBgClass}" style="${navStyle} ${navBgStyle}">
     `;
 
     if (navData.logo) {

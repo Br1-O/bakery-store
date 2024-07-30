@@ -1,5 +1,24 @@
 import { fetchInternalData } from "./fetch.js"
 
+export const getAllProductsInCategory = async(category) => {
+
+    //fetch product data
+    let products = await fetchInternalData("assets/js/json/products-list.json", "products");
+
+    //filter products by category
+    let filteredProducts = products.filter(product => product.categories.some(productCategory => productCategory === category));
+
+    //map filtered products to array with their data
+    let result = filteredProducts.map(product => {
+        return {
+            name: product.name,
+            link: product.link
+        };
+    });
+    
+    return result;
+};
+
 export const getInventory = async () => {
 
     let inventory = fetchInternalData("assets/js/json/inventory.json", "inventory");

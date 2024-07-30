@@ -51,7 +51,7 @@ const footerContent = (
     let footer = 
     `      
     <!-- Footer -->
-    <footer class="d-flex flex-row justify-content-star" id="contact">
+    <footer class="d-flex flex-row justify-content-around align-items-start px-5 py-3 w-100" id="contact">
     `;
 
     //check if there are extra columns
@@ -60,8 +60,6 @@ const footerContent = (
     const thereIsBasicContactInfo = content.basicContactInfo;
 
     if (thereIsExtraColumns) {
-
-       
 
         //add extra contact data and navigation columns
         for (const column of content.columns) {
