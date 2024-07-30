@@ -70,10 +70,8 @@ export class ProductUtils {
 
     static getAllProductsInCategory = (category) => {
 
-        let products = "";
-
         //get products list from global state
-        products = ProductUtils.allProductsList;
+        let products = ProductUtils.allProductsList;
     
         //filter products by category
         let filteredProducts = products.filter(product => product.categories.some(productCategory => productCategory === category));
@@ -90,10 +88,10 @@ export class ProductUtils {
     };
     
     //find product by category and name (name separated with "-" instead of blank spaces)
-    static findProductByCategoryAndName = async(category, name) => {
+    static findProductByCategoryAndName = (category, name) => {
 
         //get products list from global state
-        products = ProductUtils.allProductsList;
+        let products = ProductUtils.allProductsList;
 
         //check if any of the categories or the name matches 
         return products.find((product) => {

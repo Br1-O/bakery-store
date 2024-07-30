@@ -26,6 +26,8 @@ import { formSelect } from "../components/forms/select.js";
 import { btnsGroupPagination } from "../components/btns/btnsGroupPagination.js";
 import { navBarCatalogueProducts } from "../components/navBarCatalogueProducts.js";
 import { ProductUtils } from "../models/utils/productUtils.js";
+import { productRouteHandler } from "../pages/product/utils.js";
+import { setUserDataFromSessionData } from "../utils/sessionStorage.js";
 
 //define company name to use in ti
 const companyName = "Bakery";
@@ -305,16 +307,17 @@ export const updateContent = async() => {
 
                 // Dynamic URL matching with regular expression
 
-                    const tiendaProductoPattern = /^tienda\/producto\/([^\/]+)\/([^\/]+)$/;
+                    const tiendaCategoriaProductoPattern = /^tienda\/([^\/]+)\/([^\/]+)$/;
 
                 //URL has to be in the form: tienda/producto/category/name-of-product
 
                 // Check if pattern for dinamic route of product's page is match (w/ injected dependencies into productRouteHandler)
 
-                    const singleProductPageRouteHandler = await dinamicRouteDisplay(hash, tiendaProductoPattern, async (routeParams) => {
+                    const singleProductPageRouteHandler = await dinamicRouteDisplay(hash, tiendaCategoriaProductoPattern, async (routeParams) => {
+
                         await productRouteHandler(
                             routeParams,
-                            findProductByCategoryAndName,
+                            ProductUtils,
                             userData,
                             redirectToPage,
                             setUserDataFromSessionData,
@@ -328,6 +331,7 @@ export const updateContent = async() => {
                 if (singleProductPageRouteHandler) {
 
                 }else{
+                    
                     //update title attribute of page
                     document.title =  ` ${companyName} · Not Found 404`;
 
