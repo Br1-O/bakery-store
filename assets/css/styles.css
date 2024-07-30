@@ -1013,6 +1013,45 @@ select option{
   color: var(--logo-bg-color);
 }
 
+.form-btn{
+  font-family: var(--font-main, "sans-serif");
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: var(--font-hover-color);
+
+  cursor: pointer;
+
+  transition: all .2s ease;
+}
+
+.form-btn i{
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.form-btn:hover i{
+  animation: RotateY 1s ease-in-out forwards;
+  animation-iteration-count: infinite;
+}
+
+/* Change border color when the input is focused */
+input[type="number"]:focus {
+  box-shadow: 0 0 5px var(--border-color);
+}
+
+/* Optional: Remove any default focus outline for better aesthetics */
+input[type="number"]::-moz-focus-inner {
+  border: 0;
+}
+
+/* Gonna be changed to custom buttons */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  /* -webkit-appearance: none; */
+  height: max(3vmax, 2.5rem);
+}
+
+
 /* ■■■■­■■­■■­■■­■■ Pagination btns group ■■■■­■■­■■­■■­■■ */
 
 .page-item+.active{
