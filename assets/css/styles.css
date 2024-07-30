@@ -859,7 +859,7 @@ body{
 .navbar-nav a{
   color: var(--font-hover-color);
   font-size: 2rem;
-  font-family: 'Jost', 'sans-serif';
+  font-family: var(--font-main, "sans-serif");
   transition: all .4s ease;
 }
 
@@ -870,7 +870,7 @@ body{
 #navBarCategories a{
   color: var(--font-hover-color);
   font-size: 1.25rem !important;
-  font-family: 'Jost', 'sans-serif';
+  font-family: var(--font-main, "sans-serif");
   transition: all .4s ease;
 }
 
@@ -941,7 +941,11 @@ section{
 
 .product-card{
   height: max(25vmax, 25rem);
-  color: var(--font-hover-color);
+  color: var(--font-hover-color) !important;
+}
+
+.product-card p{
+  color: var(--font-hover-color) !important;
 }
 
 .card-image-container {

@@ -89,7 +89,7 @@ let pageContent =
   ${categoriesNavBar}
 
   <!-- Search and filter bar -->
-  <div class="container-filter-bar container-fluid row d-flex flex-row justify-content-around">
+  <div class="container-filter-bar container-fluid row d-flex flex-row justify-content-around align-items-center">
 
     <div class="col-12 col-md-4 col-lg-3">
 
@@ -101,6 +101,7 @@ let pageContent =
           {
             name: "ingredients",
             placeholder: "Ingredientes", 
+            textColor: "var(--font-hover-color)",
             options: 
             [
               {
@@ -137,8 +138,7 @@ let pageContent =
       </div>
     </div>
 
-
-    <div class="col-12 col-md-4 col-lg-3">
+    <div class="col-12 col-md-4 col-lg-2">
 
       <h3 class="h4 text-white"> Ordenar por: </h3>
 
@@ -166,8 +166,6 @@ let pageContent =
         )}
       </div>
     </div>
-
-
 
   </div>
 
