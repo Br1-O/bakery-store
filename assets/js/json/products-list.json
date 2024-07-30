@@ -7,13 +7,13 @@
         "id": 1,
         "name": "Set de Panes Artesanales",
         "description-cover": "Set de panes artesanales: baguette, pan de centeno, y pan de semillas.",
-        "price": "1500",
+        "price": "4500",
         "image": [
-          "assets/resources/images/imgs/products/pan-1.jpg",
-          "assets/resources/images/imgs/products/pan-2.jpg"
+          "assets/resources/images/imgs/products/pan-1.avif",
+          "assets/resources/images/imgs/products/pan-2.jpeg"
         ],
         "link": "#tienda/producto/panes/set-de-panes-artesanales",
-        "categories": ["panes", "artesanal"],
+        "categories": ["panaderia", "artesanal"],
         "tags": ["Nuevo", "Oferta"],
         "rating": 4.5,
         "favorite": false
@@ -22,13 +22,13 @@
         "id": 2,
         "name": "Tarta de Manzana",
         "description-cover": "Tarta de manzana casera. Ideal para disfrutar en cualquier ocasión.",
-        "price": "1200",
+        "price": "8200",
         "image": [
-          "assets/resources/images/imgs/products/tarta-1.jpg",
-          "assets/resources/images/imgs/products/tarta-2.jpg"
+          "assets/resources/images/imgs/products/tarta-manzana-1.jpg",
+          "assets/resources/images/imgs/products/tarta-manzana-2.webp"
         ],
         "link": "#tienda/producto/tartas/tarta-de-manzana",
-        "categories": ["tartas", "casero"],
+        "categories": ["pasteleria", "tortas"],
         "tags": ["Nuevo"],
         "rating": 2,
         "favorite": true
@@ -37,13 +37,13 @@
         "id": 3,
         "name": "Pastel de Chocolate",
         "description-cover": "Pastel de chocolate delicioso. Perfecto para celebraciones especiales.",
-        "price": "1800",
+        "price": "11500",
         "image": [
-          "assets/resources/images/imgs/products/pastel-1.jpg",
-          "assets/resources/images/imgs/products/pastel-2.jpg"
+          "assets/resources/images/imgs/products/pastel-chocolate-1.jpg",
+          "assets/resources/images/imgs/products/pastel-chocolate-2.jpg"
         ],
         "link": "#tienda/producto/pasteles/pastel-de-chocolate",
-        "categories": ["pasteles", "especial"],
+        "categories": ["pasteleria", "tortas"],
         "tags": ["Nuevo"],
         "rating": 3.5,
         "favorite": false
@@ -52,13 +52,13 @@
         "id": 4,
         "name": "Galletas de Avena",
         "description-cover": "Galletas de avena ligeras y saludables. Perfectas para un snack.",
-        "price": "800",
+        "price": "250",
         "image": [
-          "assets/resources/images/imgs/products/galletas-1.jpg",
-          "assets/resources/images/imgs/products/galletas-2.jpg"
+          "assets/resources/images/imgs/products/galletas-avena-1.jpg",
+          "assets/resources/images/imgs/products/galletas-avena-2.jpg"
         ],
         "link": "#tienda/producto/galletas/galletas-de-avena",
-        "categories": ["galletas", "saludable"],
+        "categories": ["pasteleria", "galletas", "saludable"],
         "tags": ["Nuevo", "Oferta"],
         "rating": 3,
         "favorite": true
@@ -67,13 +67,13 @@
         "id": 5,
         "name": "Croissants",
         "description-cover": "Croissants frescos y esponjosos. Ideales para el desayuno.",
-        "price": "1000",
+        "price": "300",
         "image": [
           "assets/resources/images/imgs/products/croissant-1.jpg",
           "assets/resources/images/imgs/products/croissant-2.jpg"
         ],
         "link": "#tienda/producto/panaderia/croissants",
-        "categories": ["panaderia", "desayuno"],
+        "categories": ["pasteleria", "facturas", "desayuno"],
         "tags": ["Oferta"],
         "rating": 5,
         "favorite": false
@@ -82,13 +82,13 @@
         "id": 6,
         "name": "Pan de Molde Integral",
         "description-cover": "Pan de molde integral clásico. Combina sabor y salud.",
-        "price": "900",
+        "price": "2000",
         "image": [
-          "assets/resources/images/imgs/products/pan-molde-1.jpg",
-          "assets/resources/images/imgs/products/pan-molde-2.jpg"
+          "assets/resources/images/imgs/products/pan-molde-integral-1.webp",
+          "assets/resources/images/imgs/products/pan-molde-integral-2.jpg"
         ],
         "link": "#tienda/producto/panes/pan-de-molde-integral",
-        "categories": ["panes", "integral"],
+        "categories": ["panaderia", "integral", "saludable"],
         "tags": ["Oferta especial"],
         "rating": 4,
         "favorite": true
@@ -97,13 +97,13 @@
         "id": 7,
         "name": "Muffins de Arándanos",
         "description-cover": "Muffins de arándanos deliciosos y esponjosos. Perfectos para el té.",
-        "price": "1300",
+        "price": "550",
         "image": [
-          "assets/resources/images/imgs/products/muffin-1.jpg",
-          "assets/resources/images/imgs/products/muffin-2.jpg"
+          "assets/resources/images/imgs/products/muffin-arandanos-1.jpeg",
+          "assets/resources/images/imgs/products/muffin-arandanos-2.jpg"
         ],
         "link": "#tienda/producto/reposteria/muffins-de-arandanos",
-        "categories": ["reposteria"],
+        "categories": ["pasteleria", "muffin"],
         "tags": ["Oferta"],
         "rating": 4,
         "favorite": false
@@ -112,14 +112,74 @@
         "id": 8,
         "name": "Donuts Glaseados",
         "description-cover": "Donuts glaseados con diferentes sabores. Añade dulzura a tu día.",
-        "price": "1100",
+        "price": "500",
         "image": [
-          "assets/resources/images/imgs/products/donut-1.jpg",
-          "assets/resources/images/imgs/products/donut-2.jpg"
+          "assets/resources/images/imgs/products/donut-glaseado-1.webp",
+          "assets/resources/images/imgs/products/donut-glaseado-2.jpg"
         ],
         "link": "#tienda/producto/reposteria/donuts-glaseados",
-        "categories": ["reposteria"],
+        "categories": ["pasteleria", "donuts"],
         "tags": ["Oferta"],
+        "rating": 4.5,
+        "favorite": true
+      },
+      {
+        "id": 9,
+        "name": "Prepizza",
+        "description-cover": "Prepizza casera ideal para preparar rápidamente en casa. Perfecta para una cena informal.",
+        "price": "1500",
+        "image": [
+          "assets/resources/images/imgs/products/prepizza-1.jpg",
+          "assets/resources/images/imgs/products/prepizza-2.jpg"
+        ],
+        "link": "#tienda/producto/casero/prepizza",
+        "categories": ["casero"],
+        "tags": ["Nuevo"],
+        "rating": 4,
+        "favorite": false
+      },
+      {
+        "id": 10,
+        "name": "Torta de Evento",
+        "description-cover": "Torta especial para eventos. Elaborada con ingredientes premium para ocasiones únicas.",
+        "price": "15000",
+        "image": [
+          "assets/resources/images/imgs/products/torta-evento-1.png",
+          "assets/resources/images/imgs/products/torta-evento-2.jpg"
+        ],
+        "link": "#tienda/producto/especial/torta-de-evento",
+        "categories": ["especial"],
+        "tags": ["Nuevo", "Especial"],
+        "rating": 5,
+        "favorite": true
+      },
+      {
+        "id": 11,
+        "name": "Tapas de Empanada",
+        "description-cover": "Tapas de empanada caseras listas para rellenar. Perfectas para preparar empanadas en casa.",
+        "price": "800",
+        "image": [
+          "assets/resources/images/imgs/products/tapas-empanada-1.webp",
+          "assets/resources/images/imgs/products/tapas-empanada-2.webp"
+        ],
+        "link": "#tienda/producto/casero/tapas-de-empanada",
+        "categories": ["casero"],
+        "tags": ["Nuevo"],
+        "rating": 4,
+        "favorite": false
+      },
+      {
+        "id": 12,
+        "name": "Sándwich de Miga",
+        "description-cover": "Sándwich de miga salado con variedad de rellenos. Ideal para eventos y reuniones.",
+        "price": "350",
+        "image": [
+          "assets/resources/images/imgs/products/sandwich-miga-1.jpg",
+          "assets/resources/images/imgs/products/sandwich-miga-2.webp"
+        ],
+        "link": "#tienda/producto/salado/sandwich-de-miga",
+        "categories": ["salado"],
+        "tags": ["Nuevo"],
         "rating": 4.5,
         "favorite": true
       }

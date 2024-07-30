@@ -10,13 +10,23 @@ import { maxLengthValidation, minLengthValidation, phoneNumberValidation, emailV
 //page not found content
 import { notFoundMessage } from "../pages/notFound404.js";
 //user model to control state
-import { userData } from "../models/user.js";
+import { userData } from "../models/classes/user.js";
 import { dinamicRouteDisplay } from "./dinamicRouting.js";
 //home page content
 import { homeContent } from "../pages/home/MAIN.js";
 import { displaySingleProductPage } from "../pages/product/MAIN.js";
+import { displayProducts } from "../pages/shop/products.js";
 import { findProductByCategoryAndName } from "../utils/products.js";
 import { shopContent } from "../pages/shop/MAIN.js";
+import { subtitle } from "../components/text/titles.js";
+import { anchor } from "../components/navs/anchor.js";
+import { dropdown } from "../components/navs/dropDown.js";
+import { productCard } from "../components/cards/productCard.js";
+import { formSelect } from "../components/forms/select.js";
+import { btnsGroupPagination } from "../components/btns/btnsGroupPagination.js";
+import { navBarCatalogueProducts } from "../components/navBarCatalogueProducts.js";
+import { ProductUtils } from "../models/utils/productUtils.js";
+
 
 //I'm not implementing this until finishing the project, since local server is unable to redirect all petitions to my index.html without using backend server utilities
 
@@ -48,10 +58,6 @@ export const updateContent = async() => {
     const content = document.getElementById("main");
     //section with the corresponding ID
     const section = document.getElementById(sectionId);
-    
-    //fetch product data
-    let productsList = await fetchInternalData("assets/js/json/products-list.json", "products");
-
 
     //■■■■■■■■■■■■■■■■■■■■ hash system routing ■■■■■■■■■■■■■■■■■■■■//
 
@@ -75,34 +81,27 @@ export const updateContent = async() => {
                 //update home content
                 content.innerHTML = homeContent;
 
-                //fetch to home data
-                const homeFetchUtils = async () => {
-                }
-
-                //apply fetch to home data
-                homeFetchUtils();
-
                 //include footer
                 footer(
                     true,
                     {
-                        logo: "",
+                        logo: "/assets/resources/images/imgs/logo.jpeg",
                         logoAltText: "",
                         socialMediaLinks: [
                             {
                                 iconClass: "bx bxl-facebook",
                                 link: "https://www.linkedin.com/in/bortuno",
-                                ariaLabel: "LinkedIn"
+                                ariaLabel: "facebook"
                             },
                             {
                                 iconClass: "bx bxl-instagram",
                                 link: "https://github.com/Br1-O?tab=repositories",
-                                ariaLabel: "Github"
+                                ariaLabel: "instagram"
                             },
                             {
                                 iconClass: "bx bxl-twitter",
                                 link: "https://wa.me/5491112345678",
-                                ariaLabel: "Whatsapp"
+                                ariaLabel: "twitter"
                             }
                         ],
                         columns:
@@ -113,15 +112,15 @@ export const updateContent = async() => {
                                 [
                                     {
                                         anchorLink: "",
-                                        anchorText: "Privace Policy"
+                                        anchorText: "Sobre nosotros"
                                     },
                                     {
                                         anchorLink: "",
-                                        anchorText: "Items & Conditions"
+                                        anchorText: "Tienda"
                                     },
                                     {
                                         anchorLink: "",
-                                        anchorText: "Cookie Policy"
+                                        anchorText: "Menú"
                                     }
                                 ]
                             },
@@ -131,15 +130,15 @@ export const updateContent = async() => {
                                 [
                                     {
                                         anchorLink: "",
-                                        anchorText: "About"
+                                        anchorText: "Recetas"
                                     },
                                     {
                                         anchorLink: "",
-                                        anchorText: "Menu"
+                                        anchorText: "Galeria"
                                     },
                                     {
                                         anchorLink: "",
-                                        anchorText: "Delivery"
+                                        anchorText: "Contacto"
                                     }
                                 ]
                             },
@@ -149,11 +148,15 @@ export const updateContent = async() => {
                                 [
                                     {
                                         anchorLink: "",
-                                        anchorText: "Gallery"
+                                        anchorText: "Politica de privacidad"
                                     },
                                     {
                                         anchorLink: "",
-                                        anchorText: "Contact"
+                                        anchorText: "Términos y condiciones"
+                                    },
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Politica de Cookies"
                                     }
                                 ]
                             }
@@ -164,7 +167,6 @@ export const updateContent = async() => {
 
             break;
 
-            
             //store page
             case 'tienda':
 
@@ -175,28 +177,111 @@ export const updateContent = async() => {
                 navBar(userData.isSessionSet);
 
                 //update page content
-                content.innerHTML = shopContent;
+                content.innerHTML = shopContent(
+                    subtitle,
+                    anchor,
+                    dropdown,
+                    navBarCatalogueProducts,
+                    formSelect,
+                    btnsGroupPagination
+                );
 
                 //products container
                 const shopContainerTrendingProducts = document.getElementById("container-trending-products");
 
                 //fetch to shop data
-                const shopFetchUtils = async () => {
-                    let products= await fetchInternalData("assets/js/json/products-list.json", "products"); 
+                let products= ProductUtils.allProductsList; 
 
-                    displayProductList(products, shopContainerTrendingProducts);
-                }
-
-                //apply fetch to shop data
-                shopFetchUtils();
+                displayProducts(products, shopContainerTrendingProducts, productCard);
 
                 //include footer
-                footer();
-                
+                footer(
+                    true,
+                    {
+                        logo: "/assets/resources/images/imgs/logo.jpeg",
+                        logoAltText: "",
+                        socialMediaLinks: [
+                            {
+                                iconClass: "bx bxl-facebook",
+                                link: "https://www.linkedin.com/in/bortuno",
+                                ariaLabel: "facebook"
+                            },
+                            {
+                                iconClass: "bx bxl-instagram",
+                                link: "https://github.com/Br1-O?tab=repositories",
+                                ariaLabel: "instagram"
+                            },
+                            {
+                                iconClass: "bx bxl-twitter",
+                                link: "https://wa.me/5491112345678",
+                                ariaLabel: "twitter"
+                            }
+                        ],
+                        columns:
+                        [
+                            {
+                                title: "",
+                                links:
+                                [
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Sobre nosotros"
+                                    },
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Tienda"
+                                    },
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Menú"
+                                    }
+                                ]
+                            },
+                            {
+                                title: "",
+                                links:
+                                [
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Recetas"
+                                    },
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Galeria"
+                                    },
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Contacto"
+                                    }
+                                ]
+                            },
+                            {
+                                title: "",
+                                links:
+                                [
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Politica de privacidad"
+                                    },
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Términos y condiciones"
+                                    },
+                                    {
+                                        anchorLink: "",
+                                        anchorText: "Politica de Cookies"
+                                    }
+                                ]
+                            }
+                        ]
+                    
+                    }                    
+                );
+              
             break;
             
             //products page
-            case 'productos':
+            case 'menu':
 
                 //update title attribute of page
                 document.title =  ` Bakery · Catalogo`;
@@ -281,12 +366,15 @@ document.addEventListener("DOMContentLoaded", () => {
     loadingScreen.classList.add("flex");
     body.style.overflowY = "hidden";
 
-    window.onload = () => {
+    window.onload = async() => {
         
         //display content when the window if fully loaded
         loadingScreen.classList.remove("flex");
         loadingScreen.classList.add("d-none");
         body.style.overflowY = "scroll";
+            
+        //initialize productUtils to manage global state of products list
+        await ProductUtils.initialize(); 
 
         //update content based on the URL
         updateContent();
