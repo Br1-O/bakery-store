@@ -27,6 +27,8 @@ import { btnsGroupPagination } from "../components/btns/btnsGroupPagination.js";
 import { navBarCatalogueProducts } from "../components/navBarCatalogueProducts.js";
 import { ProductUtils } from "../models/utils/productUtils.js";
 
+//define company name to use in ti
+const companyName = "Bakery";
 
 //I'm not implementing this until finishing the project, since local server is unable to redirect all petitions to my index.html without using backend server utilities
 
@@ -48,6 +50,7 @@ import { ProductUtils } from "../models/utils/productUtils.js";
 
 //Update content based on hash
 export const updateContent = async() => {
+
     //get the url
     const hash = window.location.hash.substring(1); // Remove leading "#"
 
@@ -73,7 +76,7 @@ export const updateContent = async() => {
             case '':
 
                 //update title attribute of page
-                document.title =  ` Bakery · Panaderia artesanal `;
+                document.title =  ` ${companyName} · Panaderia artesanal `;
 
                 //include proper navbar
                 navBar(userData.isSessionSet);
@@ -171,7 +174,7 @@ export const updateContent = async() => {
             case 'tienda':
 
                 //update title attribute of page
-                document.title =  ` Bakery · Shop Online `;
+                document.title =  ` ${companyName} · Tienda Online `;
 
                 //include proper navbar
                 navBar(userData.isSessionSet);
@@ -284,7 +287,7 @@ export const updateContent = async() => {
             case 'menu':
 
                 //update title attribute of page
-                document.title =  ` Bakery · Catalogo`;
+                document.title =  ` ${companyName} · Catalogo`;
 
                 //include proper navbar
                 navBar(userData.isSessionSet);
@@ -326,7 +329,7 @@ export const updateContent = async() => {
 
                 }else{
                     //update title attribute of page
-                    document.title =  `Oshare Designs · Not Found 404`;
+                    document.title =  ` ${companyName} · Not Found 404`;
 
                     //display not found default page
                     content.innerHTML = notFoundMessage;
@@ -357,7 +360,7 @@ window.addEventListener('hashchange', updateContent);
 document.addEventListener("DOMContentLoaded", () => {
 
     //update title attribute of loading page
-    document.title =  ` · Loading...`;
+    document.title =  ` ${companyName} · Loading...`;
 
     const loadingScreen = document.getElementById("loading-overlay");
     const body = document.querySelector("body");

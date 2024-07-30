@@ -814,7 +814,7 @@ textarea {
 
 .loading-logo{
     background-color: var(--main-bg-color);
-    background-image: url("../images/imgs/logo.jpeg");
+    background-image: url("../resources/images/imgs/logo.jpeg");
     background-size: cover ;
     background-repeat: no-repeat;
     background-position: center;
