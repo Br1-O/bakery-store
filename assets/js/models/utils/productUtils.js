@@ -70,6 +70,9 @@ export class ProductUtils {
 
     static getAllProductsInCategory = (category) => {
 
+        console.log(ProductUtils.allProductsList);
+
+
         //get products list from global state
         let products = ProductUtils.allProductsList;
     
@@ -110,5 +113,23 @@ export class ProductUtils {
                 && product.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/ /g, '-') === name;
         });
         //(normalize first to wipe special characters -> change to lowercase version -> replace the spaces with "-")
+    }
+
+    //get the X more popular products
+    static getMostPopularProducts = (topX = 1) => {
+
+        //get products list from global state
+        let products = ProductUtils.allProductsList;
+        
+        //sort by rating
+        let sortedProducts = products.sort((a, b) => b.rating - a.rating);
+
+        console.log(sortedProducts);
+
+        //get the top X items
+        const topProducts = sortedProducts.slice(0, topX);
+
+        //return list of products ordered
+        return topProducts;
     }
 }

@@ -1,29 +1,25 @@
 import { subtitle } from "../../components/text/titles.js";
 
-export const homeContent = 
-`
-    <section id="about-me" class="position-relative d-flex flex-column justify-content-center align-items-center">
 
-        ${subtitle("", "var(--logo-bg-color)", 1, "var(--font-hover-color)")}
+export const homeContent = (ProductUtils, billboard, billboardMainPage, carrousel, carrouselMostPopularProducts) => {
 
-    </section>
+    let homeContent =
 
-    <section id="formation" class="position-relative d-flex flex-column justify-content-center align-items-center gap-2" style="background-color: var(--logo-bg-color);">
+    `
+    <section id="billboard" class="position-relative d-flex flex-column justify-content-center align-items-center my-3">
 
-        ${subtitle("", "var(--main-bg-color)", 2, "var(--font-hover-color)")}
+        ${billboardMainPage(billboard)}
 
     </section>
 
-    <section id="projects" class="position-relative d-flex flex-column justify-content-center align-items-center">
+    <section id="prod-destacados" class="position-relative d-flex flex-column justify-content-center align-items-center pb-5" style="background-color: var(--main-bg-color);">
 
-        ${subtitle("", "var(--logo-bg-color)", 2, "var(--font-hover-color)")}
+        ${subtitle( "Nuestros productos más populares", "var(--font-hover-color)", 3, "var(--logo-bg-color)" )}
+        
+        ${carrouselMostPopularProducts(ProductUtils, carrousel)}
+        </section>
+    `;
 
-    </section>
+    return homeContent
+}
 
-    <section id="contact" class="position-relative d-flex flex-column justify-content-center align-items-center" style="background-color: var(--logo-bg-color);">
-
-        ${subtitle("", "var(--main-bg-color)", 2, "var(--font-hover-color)")}
-
-    </section>
-
-`;

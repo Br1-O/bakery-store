@@ -165,11 +165,11 @@ export const displaySingleProductPage = async(product, container, userData = {})
         //add filled product's template into variable
         template = `
         
-            <div id="product-page-container" class="flex d-col" data-product="${product.id}" data-aos="fade-up" data-aos-offset="50" data-aos-duration="2000">
+            <div id="product-page-container" class="row d-flex flex-column mt-5 pb-5" data-product="${product.id}" data-aos="fade-up" data-aos-offset="50" data-aos-duration="2000">
         
-                <section id="product-page-info"  class="flex rowToCol">
+                <section id="product-page-info"  class="d-flex flex-row">
                     
-                    <article id="product-images">
+                    <article id="product-images" class="col-5">
 
                         <div id="product-images-column"> 
                             ${previewImagesColumnTemplate}
@@ -185,7 +185,7 @@ export const displaySingleProductPage = async(product, container, userData = {})
 
                     </article>
 
-                    <article id="product-details">
+                    <article id="product-details" class="d-flex flex-col col-7">
 
                         <div class="inline-navigation-bar">
                             <p> 
@@ -215,7 +215,7 @@ export const displaySingleProductPage = async(product, container, userData = {})
 
                         <div id="product-stock-info">
 
-                            <div class="flex col">
+                            <div class="d-flex flex-column">
                                 
                                 <h5> Talle </h5>
 
@@ -225,7 +225,7 @@ export const displaySingleProductPage = async(product, container, userData = {})
 
                             </div>
 
-                            <div class="flex col">
+                            <div class="d-flex flex-column">
                                 
                                 <h5> Color </h5>
 
@@ -274,243 +274,4 @@ export const displaySingleProductPage = async(product, container, userData = {})
 
     //set product page template into container
     container.innerHTML = template;
-
-    //set event listeners
-
-        //add to shopping cart button
-        let btnAddToCart = document.getElementById("btn-cart-add");
-
-        btnAddToCart.addEventListener("click", () => {
-
-            let selectedSize = document.querySelector(".product-stock-info-size[data-selected]");
-            let selectedColor = document.querySelector(".product-stock-info-color[data-selected]");
-
-            //check if size and color is selected
-            if (selectedSize && selectedColor) {
-
-                // New map cart with their quantities
-                let cart = new Map(userData.cart);
-
-                //set item object with productId, size and color
-                let item = 
-                {
-                    productId: product.id,
-                    size: selectedSize.innerText,
-                    color: selectedColor.dataset.color
-                }
-
-                //set quantity to add of the product selected into the shopping cart
-                let quantityToAdd = cartQuantityToAdd ? parseInt(cartQuantityToAdd.value) : 1;
-
-                //set quantity of the product already inside the cart
-                let quantityInCart = 0;
-                if(cart.get(JSON.stringify(item))){
-                    quantityInCart = parseInt(cart.get(JSON.stringify(item)));
-                }
-
-                //maximum amount of units available of that product
-                let maxStock = selectedColor.dataset.stock;
-
-                //check if the sum is less or equal to the stock available
-                if(quantityToAdd + quantityInCart <= maxStock){
-
-                    //function to add a product into the cart with its proper quantity
-                    function addItemMapWithQuantity(map, product, quantity) {
-
-                        //parse object product into string version for comparision with keys
-                        let productAsString = JSON.stringify(product);
-
-                        //if the product matches any key of the map element of the cart with quantity
-                        if (map.has(productAsString)) {
-                            
-                            // If the product is already in the cart, update the quantity
-                            const currentQuantity = parseInt(map.get(productAsString));
-                            map.set(productAsString, currentQuantity + quantity);
-                        } else {
-                            // If the product is not in the cart, add it with the given quantity
-                            map.set(productAsString, quantity);
-                        }
-                    }
-                    
-                    //compare the productId, size and color of each product inside the cart, to group the identical ones
-                    addItemMapWithQuantity(cart, item, quantityToAdd);
-
-                    //set user's shopping car as the array with quantity
-                    userData.cart = Array.from(cart.entries());
-
-                    //dispatch event to update screen
-                    window.dispatchEvent(new Event('itemAddedToCart'));
-                }else{
-
-                    //toast notification for failure
-                    const Toast = Swal.mixin({
-                        toast: true,
-                        position: "center",
-                        showConfirmButton: false,
-                        timer: 2000,
-                        timerProgressBar: false,
-                        didOpen: (toast) => {
-                        toast.onmouseenter = Swal.stopTimer;
-                        toast.onmouseleave = Swal.resumeTimer;
-                        }
-                    });
-                    Toast.fire({
-                        icon: "error",
-                        title: `¡No puede superar el limite disponible!`
-                    });
-                }
-            }else{
-
-                //toast notification for failure
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: "center",
-                    showConfirmButton: false,
-                    timer: 2000,
-                    timerProgressBar: false,
-                    didOpen: (toast) => {
-                    toast.onmouseenter = Swal.stopTimer;
-                    toast.onmouseleave = Swal.resumeTimer;
-                    }
-                });
-                Toast.fire({
-                    icon: "error",
-                    title: `¡Antes debe seleccionar la talla y color deseado!`
-                });
-            }
-        });
-
-        //product image toggle with thumbnail images
-        let previewThumbnails = document.getElementsByClassName("preview-thumbnail");
-        let previewImage = document.querySelector(".preview-image");
-
-        for (const thumbnail of previewThumbnails) {
-
-            let thumbnailSrc = thumbnail.src;
-
-            //change the source of the preview image to the thumbnail's source
-            thumbnail.addEventListener("click", () => {
-                previewImage.src = thumbnailSrc;
-                //change the href of the a so it opens the new image when clicked
-                (previewImage.parentElement).href = thumbnailSrc;
-            });
-        }
-
-        //product sizes to show available colors
-        const btnSizes = document.getElementsByClassName("product-stock-info-size");
-        //container of color btns
-        const containerColors = document.getElementById("product-stock-info-colors");
-        //quantity container and btn
-        const containerQuantity = document.getElementById("product-add-to-cart-display-quantity");
-        const cartQuantityToAdd = document.getElementById("product-add-to-cart-quantity");
-
-        //iterate all sizes buttons
-        for (const btn of btnSizes) {
-            
-            //event listener to set all the colors options for that size on click
-            btn.addEventListener("click", () => {
-
-                //remove selected dataset from selected size and select current size
-                setBtnAsSelected(btn, btnSizes);
-
-                //clean template color from previous colors
-                templateColorsOption = "";
-
-                //erase the quantity available for the last product
-                containerQuantity.innerText = "";
-
-                //get size id from dataset of btn
-                let sizeId = parseInt(btn.dataset.size);
-
-                //check all sizes of the product for that size data
-                stockOfProductOrderedBySize.forEach(size => {
-
-                    if (size.size === sizeId) {
-                        
-                        //set template to all available colors
-                        size.stock.forEach(product => {
-
-                            //if product is in stock, show the option for that color
-                            if (product.in_stock) {
-                                templateColorsOption +=
-                                `
-                                    <div class="product-stock-info-color" style="background-color:${product.code}" data-stock="${product.quantity}" data-color="${product.color}"></div>
-                                `
-                            }
-
-                        });
-
-                        //display template of color's options
-                        containerColors.innerHTML = templateColorsOption;
-                    }
-                });
-
-                //btns for available colors
-                btnColors = document.getElementsByClassName("product-stock-info-color");
-
-                if (btnColors.length !== 0) {
-
-                    //iterate all color buttons
-                    for (const btn of btnColors) {
-
-                        //remove previous event listeners to avoid unstable behaviour
-                        btn.removeEventListener("click", setBtnAsSelected);
-        
-                        //event listener for all color buttons 
-                        btn.addEventListener("click", () => {
-                            //remove selected dataset from selected color and select current color
-                            setBtnAsSelected(btn, btnColors);
-                            //display the quantity available for that product
-                            containerQuantity.innerText = 
-                            `
-                                ${btn.dataset.stock > 1 ? btn.dataset.stock + " disponibles" : "¡" + btn.dataset.stock + " disponible!"} 
-                            `
-
-                            //set maximum value for number field
-                            if ( cartQuantityToAdd.value > btn.dataset.stock ) {
-                                cartQuantityToAdd.value = btn.dataset.stock;
-                            }
-                            //maximum items available in stock for max value in number field
-                            cartQuantityToAdd.max = btn.dataset.stock;
-                        });
-                    }
-                }
-
-            });
-        }
-
-        //This event listener is outside size btns eventListener for the case where size btn is not clicked
-            //iterate all color buttons
-            for (const btn of btnColors) {
-                //event listener for all color buttons 
-                btn.addEventListener("click", () => {
-
-                    //remove selected dataset from selected color and select current color
-                    setBtnAsSelected(btn, btnColors);
-                    //display the quantity available for that product
-                    containerQuantity.innerText = 
-                    `
-                        ${btn.dataset.stock > 1 ? btn.dataset.stock + " disponibles" : "¡" + btn.dataset.stock + " disponible!"}
-                    `
-
-                    //set maximum value for number field
-                    if ( cartQuantityToAdd.value > btn.dataset.stock ) {
-                        cartQuantityToAdd.value = btn.dataset.stock;
-                    }
-                    //maximum items available in stock for max value in number field
-                    cartQuantityToAdd.max = btn.dataset.stock;
-                });
-            }
-
-        //function to set only a targeted btn from a collection with the dataset-selected
-        function setBtnAsSelected(btnSelected, ElementsByClassCollection) {
-        
-            //remove selected dataset from selected color
-            for (const btn of ElementsByClassCollection){
-                btn.hasAttribute("data-selected") && btn.removeAttribute("data-selected");
-            }
-            
-            //add dataset selected to this btn size
-            btnSelected.dataset.selected = "";
-        }
 }
