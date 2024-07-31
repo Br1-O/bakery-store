@@ -42,6 +42,11 @@ textarea {
     --font-main: 'Josefin-sans';
     --footer-bg-color: rgb(17, 17, 17);
     --footer-h4-color: white;
+
+    /* variables for product's tags colors*/
+    --tag-color-new:rgba(61, 250, 74, 0.7);
+    --tag-color-discount:rgba(251, 37, 37, 0.7);
+    --tag-color-special:rgb(248, 255, 36, 0.7);
   }
 
 /* ■■■■­■■­■■­■■­■■ animations  ■■■■­■■­■■­■■­■■ */
@@ -1299,16 +1304,16 @@ footer i:hover{
 .inline-navigation-bar p a {
   font-size: max(0.8vmax, 0.8rem);
   font-weight: 400;
-  color: var(--font-color);
+  color: var(--font-hover-color);
   cursor: pointer;
 }
 
 .inline-navigation-bar p :last-child{
-  color: gray;
+  color: rgb(189, 186, 186);
 }
 
 #product-details h2{
-  color: var(--font-color);
+  color: var(--font-hover-color);
   font-family: var(--font-main, "sans-serif");
   font-size: max(2vmax, 2rem);
   font-weight: 500;
@@ -1319,7 +1324,7 @@ footer i:hover{
 }
 
 #product-details h4{
-  color: var(--font-color);
+  color: var(--font-hover-color);
   font-family: var(--font-main, "sans-serif");
   font-size: max(1.35vmax, 1.35rem);
   font-weight: 400;
@@ -1331,19 +1336,20 @@ footer i:hover{
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
 
   width: 100%;
   height: 4rem;
-  overflow: hidden;
+  text-wrap: wrap;
 
-  background-color: rgb(224, 187, 228);
+  background-color: var(--font-hover-color);
+  color: var(--main-bg-color);
   padding: 5px 10px;
   border-radius: 5px;
 
-  color: var(--font-color);
   font-family: var(--font-main, "sans-serif");
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 1.25rem;
+  font-weight: 100;
 
   margin: max(0.7vmax, 0.7rem) 0rem;
 

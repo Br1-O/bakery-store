@@ -33,6 +33,7 @@ import { carrouselMostPopularProducts } from "../components/carrouselMostPopular
 import { carrousel } from "../components/dataDisplayers/carrousel.js";
 import { billboard } from "../components/dataDisplayers/billboard.js";
 import { billboardMainPage } from "../components/billboardMainPage.js";
+import { btnWithIcon } from "../components/btns/btnWithIcon.js";
 
 //define company name to use in ti
 const companyName = "Bakery";
@@ -358,7 +359,8 @@ export const updateContent = async() => {
                             redirectToPage,
                             setUserDataFromSessionData,
                             notFoundMessage,
-                            displaySingleProductPage
+                            displaySingleProductPage,
+                            btnWithIcon
                         );
                     });
 

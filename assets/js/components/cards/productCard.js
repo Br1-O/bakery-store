@@ -16,7 +16,7 @@ export const productCard = (
 
     let card = 
     `
-    <div id="${product.id}" class="card product-card col-11 col-md-4 col-lg-3 p-0 bg-glass-effect" aria-label="${product.ariaLabel}">
+    <div id="${product.id}" class="card product-card col-11 col-md-4 col-lg-3 p-0 bg-glass-effect" aria-label="${product.ariaLabel}" data-aos="zoom-in" data-aos-offset="100" data-aos-duration="2000">
 
         <div class="card-body container-product-card-title d-flex flex-column justify-content-center align-items-start flex-wrap">
             <a class="text-decoration-none card-title align-self-center fw-bold fs-5" href="${product.link}">
