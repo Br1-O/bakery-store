@@ -61,7 +61,7 @@ export const carrousel = ( id = "carousel", slideArray = [ { image: "", tags: ""
                 </div>
 
                 <div class="card mb-3 bg-glass-effect">
-                    <img src="${slide.image}" class="card-img-top img-thumbnail" alt="${slide.title}">
+                    <img class="w-50 m-auto" src="${slide.image}" class="card-img-top img-thumbnail" alt="${slide.title}">
                     <div class="card-body">
                         <p class="card-text h5"> ${slide.description} </p>
                     </div>
@@ -95,7 +95,7 @@ export const carrousel = ( id = "carousel", slideArray = [ { image: "", tags: ""
                     </div>
 
                     <div class="card mb-3 bg-glass-effect">
-                        <img src="${slide.image}" class="card-img-top img-thumbnail" alt="${slide.title}">
+                        <img class="w-50 m-auto"  src="${slide.image}" class="card-img-top img-thumbnail" alt="${slide.title}">
                         <div class="card-body">
                             <p class="card-text h5"> ${slide.description} </p>
                         </div>
