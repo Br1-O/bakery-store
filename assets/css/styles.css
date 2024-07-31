@@ -906,7 +906,7 @@ body{
 
 .main{
   width: 100%;
-  height: auto;
+  height: 80vh;
 
   background-color: var(--main-bg-color);
 }
@@ -976,8 +976,11 @@ section{
 /* ■■■■­■■­■■­■■­■■ FOOTER ■■■■­■■­■■­■■­■■ */
 
 footer{
+  width: 100%;
   background-color: var(--footer-bg-color);
   color: var(--logo-bg-color);
+  align-self: flex-end;
+  bottom: 0;
 }
 
 footer img{
@@ -1049,7 +1052,14 @@ footer i:hover{
 .footer-copyright a:hover{
   color: white;
 }
+.footer-social-media {
+  font-family: "Nunito", sans-serif;
+  color: #424242;
+}
 
+.footer-social-media:hover {
+  color: white;
+}
 
 /* ■■■■­■■­■■­■■­■■ MEDIA QUERIES ■■­■■­■■­■■­■■­■■­ ­*/
 
