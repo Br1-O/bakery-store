@@ -16,7 +16,6 @@ import { dinamicRouteDisplay } from "./dinamicRouting.js";
 import { homeContent } from "../pages/home/MAIN.js";
 import { displaySingleProductPage } from "../pages/product/MAIN.js";
 import { displayProducts } from "../pages/shop/products.js";
-import { findProductByCategoryAndName } from "../utils/products.js";
 import { shopContent } from "../pages/shop/MAIN.js";
 import { subtitle } from "../components/text/titles.js";
 import { anchor } from "../components/navs/anchor.js";
@@ -26,6 +25,9 @@ import { formSelect } from "../components/forms/select.js";
 import { btnsGroupPagination } from "../components/btns/btnsGroupPagination.js";
 import { navBarCatalogueProducts } from "../components/navBarCatalogueProducts.js";
 import { ProductUtils } from "../models/utils/productUtils.js";
+import { productRouteHandler } from "../pages/product/utils.js";
+import { setUserDataFromSessionData } from "../utils/sessionStorage.js";
+import { categoryRouteHandler } from "../pages/shop/utils.js";
 
 //define company name to use in ti
 const companyName = "Bakery";
@@ -61,6 +63,9 @@ export const updateContent = async() => {
     const content = document.getElementById("main");
     //section with the corresponding ID
     const section = document.getElementById(sectionId);
+
+    //route parameters
+    const routeParams = hash.split('/').filter(param => param);
 
     //■■■■■■■■■■■■■■■■■■■■ hash system routing ■■■■■■■■■■■■■■■■■■■■//
 
@@ -172,7 +177,7 @@ export const updateContent = async() => {
 
             //store page
             case 'tienda':
-
+            {
                 //update title attribute of page
                 document.title =  ` ${companyName} · Tienda Online `;
 
@@ -195,6 +200,7 @@ export const updateContent = async() => {
                 //fetch to shop data
                 let products= ProductUtils.allProductsList; 
 
+                //display products into container
                 displayProducts(products, shopContainerTrendingProducts, productCard);
 
                 //include footer
@@ -280,7 +286,7 @@ export const updateContent = async() => {
                     
                     }                    
                 );
-              
+            }
             break;
             
             //products page
@@ -301,20 +307,48 @@ export const updateContent = async() => {
             //dinamic routes and not found page
             default:
 
+                //■■■■■■■■■■■■■■■■■■■■ Category page dinamic URL rendering ■■■■■■■■■■■■■■■■■■■■//
+
+                // Dynamic URL matching with regular expression
+
+                    const tiendaCategoriaPattern = /^tienda\/([^\/]+)$/;
+
+                // Get category name from path
+                    let category = routeParams[1];
+
+                //URL has to be in the form: tienda/category
+
+                // Check if pattern for dinamic route of category page is match (w/ injected dependencies into productRouteHandler)
+
+                const categoryPageRouteHandler = await dinamicRouteDisplay(hash, tiendaCategoriaPattern, async (category) => {
+
+                    await categoryRouteHandler(
+                        category,
+                        ProductUtils,
+                        userData,
+                        redirectToPage,
+                        setUserDataFromSessionData,
+                        notFoundMessage,
+                        displayProducts,
+                        productCard
+                    );
+                });
+
                 //■■■■■■■■■■■■■■■■■■■■ Product page dinamic URL rendering ■■■■■■■■■■■■■■■■■■■■//
 
                 // Dynamic URL matching with regular expression
 
-                    const tiendaProductoPattern = /^tienda\/producto\/([^\/]+)\/([^\/]+)$/;
+                    const tiendaCategoriaProductoPattern = /^tienda\/([^\/]+)\/([^\/]+)$/;
 
-                //URL has to be in the form: tienda/producto/category/name-of-product
+                //URL has to be in the form: tienda/category/name-of-product
 
                 // Check if pattern for dinamic route of product's page is match (w/ injected dependencies into productRouteHandler)
 
-                    const singleProductPageRouteHandler = await dinamicRouteDisplay(hash, tiendaProductoPattern, async (routeParams) => {
+                    const singleProductPageRouteHandler = await dinamicRouteDisplay(hash, tiendaCategoriaProductoPattern, async (routeParams) => {
+
                         await productRouteHandler(
                             routeParams,
-                            findProductByCategoryAndName,
+                            ProductUtils,
                             userData,
                             redirectToPage,
                             setUserDataFromSessionData,
@@ -327,7 +361,10 @@ export const updateContent = async() => {
 
                 if (singleProductPageRouteHandler) {
 
+                }else if(categoryPageRouteHandler){
+
                 }else{
+                    
                     //update title attribute of page
                     document.title =  ` ${companyName} · Not Found 404`;
 

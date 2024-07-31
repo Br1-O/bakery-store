@@ -35,6 +35,10 @@ const defaultNavBar =
 
                 <li class="nav-item">
                     <a class="nav-link" href="#recetas" aria-label="recetas"> Recetas </a>
+                </li> 
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#nosotros" aria-label="recetas"> Nosotros </a>
                 </li>     
                 
                 <li class="nav-item">
