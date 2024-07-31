@@ -420,26 +420,3 @@ document.addEventListener("DOMContentLoaded", () => {
         updateContent();
     }
 });
-
-//Slider para el Carusel Billboard
-document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.getElementById('slider');
-    const btnLeft = document.querySelector('.btn_left');
-    const btnRight = document.querySelector('.btn_right');
-    let currentPosition = 0;
-    const cardWidth = document.querySelector('.card').offsetWidth + 20; 
-
-    btnRight.addEventListener('click', () => {
-        if (currentPosition > -((slider.children.length - 1) * cardWidth)) {
-            currentPosition -= cardWidth;
-            slider.style.transform = `translateX(${currentPosition}px)`;
-        }
-    });
-
-    btnLeft.addEventListener('click', () => {
-        if (currentPosition < 0) {
-            currentPosition += cardWidth;
-            slider.style.transform = `translateX(${currentPosition}px)`;
-        }
-    });
-});
