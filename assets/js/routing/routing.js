@@ -28,6 +28,11 @@ import { ProductUtils } from "../models/utils/productUtils.js";
 import { productRouteHandler } from "../pages/product/utils.js";
 import { setUserDataFromSessionData } from "../utils/sessionStorage.js";
 import { categoryRouteHandler } from "../pages/shop/utils.js";
+import { carrouselMostPopularProducts } from "../components/carrouselMostPopularProducts.js";
+
+import { carrousel } from "../components/dataDisplayers/carrousel.js";
+import { billboard } from "../components/dataDisplayers/billboard.js";
+import { billboardMainPage } from "../components/billboardMainPage.js";
 
 //define company name to use in ti
 const companyName = "Bakery";
@@ -87,7 +92,7 @@ export const updateContent = async() => {
                 navBar(userData.isSessionSet);
 
                 //update home content
-                content.innerHTML = homeContent;
+                content.innerHTML = homeContent(ProductUtils, billboard, billboardMainPage, carrousel, carrouselMostPopularProducts);
 
                 //include footer
                 footer(
