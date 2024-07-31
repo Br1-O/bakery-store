@@ -49,7 +49,24 @@ const defaultNavBar =
         </div>
     </div>
 </nav>
-
+<style>
+    @media (min-width: 767px) {
+        #logoMenu{
+        display: none;
+        }
+        #logoMenu1{
+        display: flex !important;
+        }
+    }
+    @media (max-width: 769px){
+        #logoMenu{
+        display: flex !important;
+        }
+        #logoMenu1{
+        display: none;
+        }
+    }
+</style>
 `
 
 //session navBar
