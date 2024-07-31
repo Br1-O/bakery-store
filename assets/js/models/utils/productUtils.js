@@ -76,6 +76,17 @@ export class ProductUtils {
         //filter products by category
         let filteredProducts = products.filter(product => product.categories.some(productCategory => productCategory === category));
     
+        return filteredProducts;
+    };
+
+    static getNameLinkOfAllProductsInCategory = (category) => {
+
+        //get products list from global state
+        let products = ProductUtils.allProductsList;
+    
+        //filter products by category
+        let filteredProducts = products.filter(product => product.categories.some(productCategory => productCategory === category));
+    
         //map filtered products to array with their data
         let result = filteredProducts.map(product => {
             return {

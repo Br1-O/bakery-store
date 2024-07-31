@@ -16,7 +16,15 @@
         "categories": ["panaderia", "artesanal"],
         "tags": ["Nuevo", "Oferta"],
         "rating": 4.5,
-        "favorite": false
+        "favorite": false,
+        "comboOptions": [],
+        "ingredients": ["Harina", "Levadura", "Sal", "Agua"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": true,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 2,
@@ -31,7 +39,15 @@
         "categories": ["pasteleria", "tortas"],
         "tags": ["Nuevo"],
         "rating": 2,
-        "favorite": true
+        "favorite": true,
+        "comboOptions": [],
+        "ingredients": ["Harina", "Azúcar", "Manzana", "Huevo", "Manteca"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 3,
@@ -46,7 +62,15 @@
         "categories": ["pasteleria", "tortas"],
         "tags": ["Nuevo"],
         "rating": 3.5,
-        "favorite": false
+        "favorite": false,
+        "comboOptions": [],
+        "ingredients": ["Harina", "Azúcar", "Chocolate", "Huevo", "Manteca"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 4,
@@ -61,7 +85,19 @@
         "categories": ["pasteleria", "galletas", "saludable"],
         "tags": ["Nuevo", "Oferta"],
         "rating": 3,
-        "favorite": true
+        "favorite": true,
+        "comboOptions": [
+          {"integer": 3, "price": 712.50},
+          {"integer": 6, "price": 1350.00},
+          {"integer": 12, "price": 2550.00}
+        ],
+        "ingredients": ["Avena", "Harina", "Azúcar", "Huevo", "Manteca"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 5,
@@ -76,7 +112,19 @@
         "categories": ["pasteleria", "facturas", "desayuno"],
         "tags": ["Oferta"],
         "rating": 5,
-        "favorite": false
+        "favorite": false,
+        "comboOptions": [
+          {"integer": 3, "price": 855.00},
+          {"integer": 6, "price": 1620.00},
+          {"integer": 12, "price": 3060.00}
+        ],
+        "ingredients": ["Harina", "Manteca", "Levadura", "Azúcar", "Huevo"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 6,
@@ -91,7 +139,15 @@
         "categories": ["panaderia", "integral", "saludable"],
         "tags": ["Oferta especial"],
         "rating": 4,
-        "favorite": true
+        "favorite": true,
+        "comboOptions": [],
+        "ingredients": ["Harina Integral", "Levadura", "Sal", "Agua"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": true,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 7,
@@ -106,7 +162,19 @@
         "categories": ["pasteleria", "muffin"],
         "tags": ["Oferta"],
         "rating": 4,
-        "favorite": false
+        "favorite": false,
+        "comboOptions": [
+          {"integer": 3, "price": 1567.50},
+          {"integer": 6, "price": 2970.00},
+          {"integer": 12, "price": 5610.00}
+        ],
+        "ingredients": ["Harina", "Azúcar", "Arándanos", "Huevo", "Manteca"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 8,
@@ -121,7 +189,19 @@
         "categories": ["pasteleria", "donuts"],
         "tags": ["Oferta"],
         "rating": 4.5,
-        "favorite": true
+        "favorite": true,
+        "comboOptions": [
+          {"integer": 3, "price": 1425.00},
+          {"integer": 6, "price": 2700.00},
+          {"integer": 12, "price": 5100.00}
+        ],
+        "ingredients": ["Harina", "Azúcar", "Levadura", "Huevo", "Leche"],
+        "flavours": ["Glaseado de vainilla", "Glaseado de chocolate", "Glaseado de frutilla"],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 9,
@@ -136,7 +216,15 @@
         "categories": ["casero"],
         "tags": ["Nuevo"],
         "rating": 4,
-        "favorite": false
+        "favorite": false,
+        "comboOptions": [],
+        "ingredients": ["Harina", "Levadura", "Sal", "Agua", "Aceite"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": true,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 10,
@@ -151,7 +239,15 @@
         "categories": ["especial", "pasteleria"],
         "tags": ["Nuevo", "Especial"],
         "rating": 5,
-        "favorite": true
+        "favorite": true,
+        "comboOptions": [],
+        "ingredients": ["Harina", "Azúcar", "Huevo", "Manteca", "Chocolate"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": true
       },
       {
         "id": 11,
@@ -166,7 +262,19 @@
         "categories": ["casero"],
         "tags": ["Nuevo"],
         "rating": 4,
-        "favorite": false
+        "favorite": false,
+        "comboOptions": [
+          {"integer": 3, "price": 2280.00},
+          {"integer": 6, "price": 4320.00},
+          {"integer": 12, "price": 8160.00}
+        ],
+        "ingredients": ["Harina", "Agua", "Aceite", "Sal"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": true,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 12,
@@ -181,7 +289,19 @@
         "categories": ["salado"],
         "tags": ["Nuevo"],
         "rating": 4.5,
-        "favorite": true
+        "favorite": true,
+        "comboOptions": [
+          {"integer": 3, "price": 997.50},
+          {"integer": 6, "price": 1890.00},
+          {"integer": 12, "price": 3570.00}
+        ],
+        "ingredients": ["Pan de miga", "Mayonesa", "Jamón", "Queso"],
+        "flavours": ["Jamón y queso", "Atún", "Pollo", "Verduras", "Queso y tomate", "Jamón y huevo", "Salame y queso", "Rúcula y queso crema", "Provolone", "Huevo y mayonesa"],
+        "isCeliacOk": false,
+        "isVeget": false,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": false
       }
     ]
   }

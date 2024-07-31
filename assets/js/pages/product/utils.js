@@ -11,6 +11,7 @@ const renderProductPage = async(product, userData, redirectToPage, setUserDataFr
         redirectToPage("", 5000);
         return;
     }else{
+
         //display page product's content
         await displaySingleProductPage(product, content, userData);
 
