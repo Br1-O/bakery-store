@@ -1,5 +1,3 @@
-import { getStockOfProductOrderedBySize } from "../../utils/products.js";
-
 export const displaySingleProductPage = async(product, container, userData = {}) => {
 
     //final template storage
@@ -141,7 +139,7 @@ export const displaySingleProductPage = async(product, container, userData = {})
         });
 
         //set category with mayus on first letter
-        let category = (((product.categories[0]).charAt(0)).toUpperCase()) + (product.categories[0]).slice(1);
+        let categoryMayus = (((product.categories[0]).charAt(0)).toUpperCase()) + (product.categories[0]).slice(1);
 
         //set preview images template
         let previewImagesColumnTemplate = "";
@@ -155,9 +153,6 @@ export const displaySingleProductPage = async(product, container, userData = {})
         
         });
 
-        //get stock info for sizes available
-        const stockOfProductOrderedBySize = await getStockOfProductOrderedBySize(product.id);
-
         //template for sizes options
         let templateSizesOption = "";
 
@@ -166,83 +161,6 @@ export const displaySingleProductPage = async(product, container, userData = {})
         
         //btns for available colors
         let btnColors;
-
-        //flag for iteration
-        let i = 0;
-        
-        //set sizes options template
-        stockOfProductOrderedBySize.forEach((size) => {
-
-            // Check if any item of that size is in stock
-            let isInStock = (size.stock).some(product => product.in_stock);
-
-            //change size code into size letter
-            let sizeLetter;
-
-            switch (size.size) {
-                case 1:
-                    sizeLetter = "XS";
-                break;
-
-                case 2:
-                    sizeLetter = "S";
-                break;
-
-                case 3:
-                    sizeLetter = "L";
-                break;
-
-                case 4:
-                    sizeLetter = "XL";
-                break;
-            }
-
-            //assign template for sizes if any product of that size is in stock
-            if (isInStock) {
-
-                //if it is the first iteration, select it
-                if(i === 0){
-
-                    templateSizesOption += 
-                    `
-                        <div class="product-stock-info-size" data-size=${size.size} data-selected> ${sizeLetter} </div>
-                    `;
-
-                    //set template to all available colors
-                    size.stock.forEach(product => {
-
-                        //if product is in stock, show all the color options
-                        if (product.in_stock) {
-
-                            templateColorsOption +=
-                            `
-                                <div class="product-stock-info-color" style="background-color:${product.code}" data-stock="${product.quantity}" data-color="${product.color}"></div>
-                            `;
-                        }
-
-                    });
-
-                    //btns for available colors
-                    btnColors = document.getElementsByClassName("product-stock-info-color");
-
-                    //increase flag once first iteration is over
-                    i++;
-
-                }else{
-                    templateSizesOption += 
-                    `
-                        <div class="product-stock-info-size" data-size=${size.size}> ${sizeLetter} </div>
-                    `;
-                }
-            } else {
-                //if not in stock, show the size in gray with no interaction available
-                templateSizesOption += 
-                `
-                    <div class="product-stock-info-size" style="cursor:none; pointer-events: none; user-select: none; filter:brightness(50%);" data-size=${size.size}> ${sizeLetter} </div>
-                `;
-            }
-
-        });
 
         //add filled product's template into variable
         template = `
@@ -276,12 +194,8 @@ export const displaySingleProductPage = async(product, container, userData = {})
                                     Tienda / 
                                 </a>
 
-                                <a href="#tienda/productos">
-                                    Productos / 
-                                </a>
-
-                                <a href="#tienda/productos/${category}">
-                                    ${category} / 
+                                <a href="#tienda/${product.categories[0]}">
+                                    ${categoryMayus} / 
                                 </a>
 
                                 <span> ${product.name} </span>

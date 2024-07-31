@@ -12,7 +12,7 @@ export const navBarCatalogueProducts = (anchor, dropdown) => {
     for (let category of (ProductUtils.mainCategoriesNameList)) {
         
         //get all products inside each main category
-        let allProductsInCategory = (ProductUtils.getAllProductsInCategory(category));
+        let allProductsInCategory = (ProductUtils.getNameLinkOfAllProductsInCategory(category));
 
         //array for anchor components of each product
         let anchorItemsForCategory = [];
@@ -23,20 +23,22 @@ export const navBarCatalogueProducts = (anchor, dropdown) => {
             anchorItemsForCategory.push(anchor({anchorText: product.name, anchorLink: product.link}));
         }
 
+        let categoryNameForDisplay = category;
+
         //change name of category to proper category name if needed
         if (category === "casero") {
             
-            category = "para hacer en casa";
+            categoryNameForDisplay = "para hacer en casa";
         }
 
         //capitalize first letter of the category name
-        category = category.charAt(0).toUpperCase() + category.slice(1);
+        categoryNameForDisplay = categoryNameForDisplay.charAt(0).toUpperCase() + categoryNameForDisplay.slice(1);
 
         //push into the menu array the dropdown component with all the anchors for the category, the category name and the category link
         menu.push(
             dropdown(
                 {
-                titleCategoryText: category,
+                titleCategoryText: categoryNameForDisplay,
                 titleCategoryLink: "#tienda/" + category,
                 groupOptions: anchorItemsForCategory
                 }

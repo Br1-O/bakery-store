@@ -96,7 +96,7 @@ let pageContent =
 
   ${btnsGroupPagination(
     {
-      totalPages: 8,
+      totalPages: 5,
       currentPage: 1
     }
   )}

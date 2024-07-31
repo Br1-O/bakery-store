@@ -4,15 +4,15 @@ export const dinamicRouteDisplay  = async(hashPath, regularExpressionPatternForR
     if (regularExpressionPatternForRoute.test(hashPath)) {
         //check and get all the dynamic paths of the URL
         const match = hashPath.match(regularExpressionPatternForRoute);
-        // Extract route parameters
+        //extract route parameters
         const routeParams = match.slice(1); 
 
-        // Define a wrapper function to invoke routeHandler with routeParams
+        //define a wrapper function to invoke routeHandler with routeParams
         const handlerWrapper = async () => {
             await routeHandler(routeParams);
         };
 
-        // Call the handlerWrapper function
+        //call the handlerWrapper function
         await handlerWrapper();
 
         return true;

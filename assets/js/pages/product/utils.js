@@ -11,6 +11,7 @@ const renderProductPage = async(product, userData, redirectToPage, setUserDataFr
         redirectToPage("", 5000);
         return;
     }else{
+
         //display page product's content
         await displaySingleProductPage(product, content, userData);
 
@@ -23,14 +24,15 @@ const renderProductPage = async(product, userData, redirectToPage, setUserDataFr
 
 //handler to display single product page based on category and product's name
 //first array are the params, the other parameters are dependency injections
-export const productRouteHandler = async ([category, productName], findProductByCategoryAndName, userData, redirectToPage, setUserDataFromSessionData, notFoundMessage, displaySingleProductPage) => {
+export const productRouteHandler = async ([category, productName], ProductUtils, userData, redirectToPage, setUserDataFromSessionData, notFoundMessage, displaySingleProductPage) => {
 
     //search the product by category and name
-    const product = await findProductByCategoryAndName(category, productName);
+    const product = ProductUtils.findProductByCategoryAndName(category, productName);
+
     //render the product's page
     await renderProductPage(product, userData, redirectToPage, setUserDataFromSessionData, notFoundMessage, displaySingleProductPage);
     //change title of the document's window
-    document.title = `${product.name} · Oshare Designs`;
+    document.title = `${product.name} · Bakery `;
     //scroll to the top of the page
     window.scrollTo({ top: 0 });
 }

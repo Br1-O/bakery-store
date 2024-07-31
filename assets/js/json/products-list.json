@@ -5,63 +5,99 @@
     "products": [
       {
         "id": 1,
-        "name": "Set de Panes Artesanales",
+        "name": "Set de panes artesanales",
         "description-cover": "Set de panes artesanales: baguette, pan de centeno, y pan de semillas.",
         "price": "4500",
         "image": [
           "assets/resources/images/imgs/products/pan-1.avif",
           "assets/resources/images/imgs/products/pan-2.jpeg"
         ],
-        "link": "#tienda/producto/panes/set-de-panes-artesanales",
+        "link": "#tienda/panaderia/set-de-panes-artesanales",
         "categories": ["panaderia", "artesanal"],
         "tags": ["Nuevo", "Oferta"],
         "rating": 4.5,
-        "favorite": false
+        "favorite": false,
+        "comboOptions": [],
+        "ingredients": ["Harina", "Levadura", "Sal", "Agua"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": true,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 2,
-        "name": "Tarta de Manzana",
+        "name": "Tarta de manzana",
         "description-cover": "Tarta de manzana casera. Ideal para disfrutar en cualquier ocasión.",
         "price": "8200",
         "image": [
           "assets/resources/images/imgs/products/tarta-manzana-1.jpg",
           "assets/resources/images/imgs/products/tarta-manzana-2.webp"
         ],
-        "link": "#tienda/producto/tartas/tarta-de-manzana",
+        "link": "#tienda/pasteleria/tarta-de-manzana",
         "categories": ["pasteleria", "tortas"],
         "tags": ["Nuevo"],
         "rating": 2,
-        "favorite": true
+        "favorite": true,
+        "comboOptions": [],
+        "ingredients": ["Harina", "Azúcar", "Manzana", "Huevo", "Manteca"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 3,
-        "name": "Pastel de Chocolate",
+        "name": "Pastel de chocolate",
         "description-cover": "Pastel de chocolate delicioso. Perfecto para celebraciones especiales.",
         "price": "11500",
         "image": [
           "assets/resources/images/imgs/products/pastel-chocolate-1.jpg",
           "assets/resources/images/imgs/products/pastel-chocolate-2.jpg"
         ],
-        "link": "#tienda/producto/pasteles/pastel-de-chocolate",
+        "link": "#tienda/pasteleria/pastel-de-chocolate",
         "categories": ["pasteleria", "tortas"],
         "tags": ["Nuevo"],
         "rating": 3.5,
-        "favorite": false
+        "favorite": false,
+        "comboOptions": [],
+        "ingredients": ["Harina", "Azúcar", "Chocolate", "Huevo", "Manteca"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 4,
-        "name": "Galletas de Avena",
+        "name": "Galletas de avena",
         "description-cover": "Galletas de avena ligeras y saludables. Perfectas para un snack.",
         "price": "250",
         "image": [
           "assets/resources/images/imgs/products/galletas-avena-1.jpg",
           "assets/resources/images/imgs/products/galletas-avena-2.jpg"
         ],
-        "link": "#tienda/producto/galletas/galletas-de-avena",
+        "link": "#tienda/pasteleria/galletas-de-avena",
         "categories": ["pasteleria", "galletas", "saludable"],
         "tags": ["Nuevo", "Oferta"],
         "rating": 3,
-        "favorite": true
+        "favorite": true,
+        "comboOptions": [
+          {"integer": 3, "price": 712.50},
+          {"integer": 6, "price": 1350.00},
+          {"integer": 12, "price": 2550.00}
+        ],
+        "ingredients": ["Avena", "Harina", "Azúcar", "Huevo", "Manteca"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 5,
@@ -72,56 +108,100 @@
           "assets/resources/images/imgs/products/croissant-1.jpg",
           "assets/resources/images/imgs/products/croissant-2.jpg"
         ],
-        "link": "#tienda/producto/panaderia/croissants",
+        "link": "#tienda/pasteleria/croissants",
         "categories": ["pasteleria", "facturas", "desayuno"],
         "tags": ["Oferta"],
         "rating": 5,
-        "favorite": false
+        "favorite": false,
+        "comboOptions": [
+          {"integer": 3, "price": 855.00},
+          {"integer": 6, "price": 1620.00},
+          {"integer": 12, "price": 3060.00}
+        ],
+        "ingredients": ["Harina", "Manteca", "Levadura", "Azúcar", "Huevo"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 6,
-        "name": "Pan de Molde Integral",
+        "name": "Pan de molde integral",
         "description-cover": "Pan de molde integral clásico. Combina sabor y salud.",
         "price": "2000",
         "image": [
           "assets/resources/images/imgs/products/pan-molde-integral-1.webp",
           "assets/resources/images/imgs/products/pan-molde-integral-2.jpg"
         ],
-        "link": "#tienda/producto/panes/pan-de-molde-integral",
+        "link": "#tienda/panaderia/pan-de-molde-integral",
         "categories": ["panaderia", "integral", "saludable"],
         "tags": ["Oferta especial"],
         "rating": 4,
-        "favorite": true
+        "favorite": true,
+        "comboOptions": [],
+        "ingredients": ["Harina Integral", "Levadura", "Sal", "Agua"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": true,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 7,
-        "name": "Muffins de Arándanos",
+        "name": "Muffins de arándanos",
         "description-cover": "Muffins de arándanos deliciosos y esponjosos. Perfectos para el té.",
         "price": "550",
         "image": [
           "assets/resources/images/imgs/products/muffin-arandanos-1.jpeg",
           "assets/resources/images/imgs/products/muffin-arandanos-2.jpg"
         ],
-        "link": "#tienda/producto/reposteria/muffins-de-arandanos",
+        "link": "#tienda/pasteleria/muffins-de-arandanos",
         "categories": ["pasteleria", "muffin"],
         "tags": ["Oferta"],
         "rating": 4,
-        "favorite": false
+        "favorite": false,
+        "comboOptions": [
+          {"integer": 3, "price": 1567.50},
+          {"integer": 6, "price": 2970.00},
+          {"integer": 12, "price": 5610.00}
+        ],
+        "ingredients": ["Harina", "Azúcar", "Arándanos", "Huevo", "Manteca"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 8,
-        "name": "Donuts Glaseados",
+        "name": "Donuts glaseados",
         "description-cover": "Donuts glaseados con diferentes sabores. Añade dulzura a tu día.",
         "price": "500",
         "image": [
           "assets/resources/images/imgs/products/donut-glaseado-1.webp",
           "assets/resources/images/imgs/products/donut-glaseado-2.jpg"
         ],
-        "link": "#tienda/producto/reposteria/donuts-glaseados",
+        "link": "#tienda/pasteleria/donuts-glaseados",
         "categories": ["pasteleria", "donuts"],
         "tags": ["Oferta"],
         "rating": 4.5,
-        "favorite": true
+        "favorite": true,
+        "comboOptions": [
+          {"integer": 3, "price": 1425.00},
+          {"integer": 6, "price": 2700.00},
+          {"integer": 12, "price": 5100.00}
+        ],
+        "ingredients": ["Harina", "Azúcar", "Levadura", "Huevo", "Leche"],
+        "flavours": ["Glaseado de vainilla", "Glaseado de chocolate", "Glaseado de frutilla"],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 9,
@@ -132,56 +212,96 @@
           "assets/resources/images/imgs/products/prepizza-1.jpg",
           "assets/resources/images/imgs/products/prepizza-2.jpg"
         ],
-        "link": "#tienda/producto/casero/prepizza",
+        "link": "#tienda/casero/prepizza",
         "categories": ["casero"],
         "tags": ["Nuevo"],
         "rating": 4,
-        "favorite": false
+        "favorite": false,
+        "comboOptions": [],
+        "ingredients": ["Harina", "Levadura", "Sal", "Agua", "Aceite"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": true,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 10,
-        "name": "Torta de Evento",
+        "name": "Torta de evento",
         "description-cover": "Torta especial para eventos. Elaborada con ingredientes premium para ocasiones únicas.",
         "price": "15000",
         "image": [
           "assets/resources/images/imgs/products/torta-evento-1.png",
           "assets/resources/images/imgs/products/torta-evento-2.jpg"
         ],
-        "link": "#tienda/producto/especial/torta-de-evento",
-        "categories": ["especial"],
+        "link": "#tienda/especial/torta-de-evento",
+        "categories": ["especial", "pasteleria"],
         "tags": ["Nuevo", "Especial"],
         "rating": 5,
-        "favorite": true
+        "favorite": true,
+        "comboOptions": [],
+        "ingredients": ["Harina", "Azúcar", "Huevo", "Manteca", "Chocolate"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": true
       },
       {
         "id": 11,
-        "name": "Tapas de Empanada",
+        "name": "Tapas de empanada",
         "description-cover": "Tapas de empanada caseras listas para rellenar. Perfectas para preparar empanadas en casa.",
         "price": "800",
         "image": [
           "assets/resources/images/imgs/products/tapas-empanada-1.webp",
           "assets/resources/images/imgs/products/tapas-empanada-2.webp"
         ],
-        "link": "#tienda/producto/casero/tapas-de-empanada",
+        "link": "#tienda/casero/tapas-de-empanada",
         "categories": ["casero"],
         "tags": ["Nuevo"],
         "rating": 4,
-        "favorite": false
+        "favorite": false,
+        "comboOptions": [
+          {"integer": 3, "price": 2280.00},
+          {"integer": 6, "price": 4320.00},
+          {"integer": 12, "price": 8160.00}
+        ],
+        "ingredients": ["Harina", "Agua", "Aceite", "Sal"],
+        "flavours": [],
+        "isCeliacOk": false,
+        "isVeget": true,
+        "isVegan": true,
+        "isNutFree": true,
+        "onDemandOnly": false
       },
       {
         "id": 12,
-        "name": "Sándwich de Miga",
+        "name": "Sándwich de miga",
         "description-cover": "Sándwich de miga salado con variedad de rellenos. Ideal para eventos y reuniones.",
         "price": "350",
         "image": [
           "assets/resources/images/imgs/products/sandwich-miga-1.jpg",
           "assets/resources/images/imgs/products/sandwich-miga-2.webp"
         ],
-        "link": "#tienda/producto/salado/sandwich-de-miga",
+        "link": "#tienda/salado/sandwich-de-miga",
         "categories": ["salado"],
         "tags": ["Nuevo"],
         "rating": 4.5,
-        "favorite": true
+        "favorite": true,
+        "comboOptions": [
+          {"integer": 3, "price": 997.50},
+          {"integer": 6, "price": 1890.00},
+          {"integer": 12, "price": 3570.00}
+        ],
+        "ingredients": ["Pan de miga", "Mayonesa", "Jamón", "Queso"],
+        "flavours": ["Jamón y queso", "Atún", "Pollo", "Verduras", "Queso y tomate", "Jamón y huevo", "Salame y queso", "Rúcula y queso crema", "Provolone", "Huevo y mayonesa"],
+        "isCeliacOk": false,
+        "isVeget": false,
+        "isVegan": false,
+        "isNutFree": true,
+        "onDemandOnly": false
       }
     ]
   }
