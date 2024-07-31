@@ -1,4 +1,4 @@
-export const displaySingleProductPage = async(product, container, userData = {}) => {
+export const displaySingleProductPage = async(product, container, btnWithIcon, userData = {}) => {
 
     //final template storage
     let template = "";
@@ -158,9 +158,6 @@ export const displaySingleProductPage = async(product, container, userData = {})
 
         //template for colors options
         let templateColorsOption = "";
-        
-        //btns for available colors
-        let btnColors;
 
         //add filled product's template into variable
         template = `
@@ -203,39 +200,15 @@ export const displaySingleProductPage = async(product, container, userData = {})
                             </p>
                         </div>
 
-                        <div class="product-tags">
-                            ${tagsTemplate}
-                        </div>
-
                         <h2> ${product.name} </h2>
 
                         <h4> $${product.price} </h4>
 
                         <p id="product-page-description"> ${product["description-cover"]} </p>
 
-                        <div id="product-stock-info">
+                        <p id="product-page-description"> Ingredientes: ${product.ingredients} </p>
 
-                            <div class="d-flex flex-column">
-                                
-                                <h5> Talle </h5>
 
-                                <div>
-                                    ${templateSizesOption}
-                                </div>
-
-                            </div>
-
-                            <div class="d-flex flex-column">
-                                
-                                <h5> Color </h5>
-
-                                <div id="product-stock-info-colors">
-                                    ${templateColorsOption}
-                                </div>
-
-                            </div>
-
-                        </div>
 
                         <div class="flex col">
 
@@ -243,18 +216,22 @@ export const displaySingleProductPage = async(product, container, userData = {})
 
                             <div id="product-add-to-cart-container">
                                     
-                                <input type="number" id="product-add-to-cart-quantity" name="quantity" value="1" min="1" max="100">
+                            <div class="input-group d-flex flex-row justify-content-around align-items-center h-content">
+                                <input type="number" class="form-control w-25 h-75" id="numberInput" value="0" min="0">
 
-                                <button class="form-btn" id="btn-cart-add">
-                                    <i class='bx bxs-cart-add'></i>
-                                    Añadir al carrito
-                                </button>
+                                ${btnWithIcon(
+                                    {
+                                        id: "btn-add-to-card",
+                                        text: "Agregar a carrito"
+                                    }
+                                )}
+                            </div>
 
                             </div>
                         
                         </div>
 
-                        <div class="product-container-favs-rating">
+                        <!-- <div class="product-container-favs-rating">
                             <div class="product-favorite">
                                 <span> Añadir a favoritos </span> ${product.favorite ? "<i class='bx bxs-heart'></i>" :  "<i class='bx bx-heart'></i>" }
                             </div>
@@ -262,7 +239,7 @@ export const displaySingleProductPage = async(product, container, userData = {})
                             <div class="product-rating">
                                 <span> Valoración: </span> ${ratingTemplate}
                             </div>
-                        </div>
+                        </div> -->
 
                     </article>
 
