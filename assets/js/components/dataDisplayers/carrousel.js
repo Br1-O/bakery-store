@@ -1,5 +1,4 @@
-export const carrousel = ( id = "carousel", slideArray = [ { image: "", tags: "", title: "", description: "", link: "", } ] ) =>
-{
+export const carrousel = (id = "carousel", slideArray = [{img:"", alt:"", h:"", p:"", tags: [""], links: [{anchorText: "", anchorLink: ""}]}]) => {
 
     let container = 
     `
@@ -54,16 +53,32 @@ export const carrousel = ( id = "carousel", slideArray = [ { image: "", tags: ""
                 <div class="carousel-item  active">
 
                     <div class="card-header p-2 rounded text-center bg-glass-effect d-flex flex-row justify-content-center align-items-center gap-2"> 
-                        <h2 class="h2"> ${slide.title} </h2> 
+                        <h2 class="h2"> ${slide.h} </h2> 
             `
+            if (slide.links) {
+                
+                for (const link of (slide.links)) {
+
+                    container += 
+                    `
+                    <a href="${link.anchorLink}" target="_blank" rel="noopener noreferrer">
+                        ${link.anchorText}
+                    </a>
+                    `;
+                }
+            }
+
             container +=
             `
                 </div>
 
                 <div class="card mb-3 bg-glass-effect">
-                    <img class="w-50 m-auto" src="${slide.image}" class="card-img-top img-thumbnail" alt="${slide.title}">
+                    <img src="${slide.img}" class="card-img-top img-thumbnail" alt="${slide.alt}">
                     <div class="card-body">
-                        <p class="card-text h5"> ${slide.description} </p>
+                        <p class="card-text h5"> ${slide.p} </p>
+                        <div class="mt-3">
+                            <span> Usando: </span> <small class="text-body-secondary"> ${tagsString} </small>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,17 +102,32 @@ export const carrousel = ( id = "carousel", slideArray = [ { image: "", tags: ""
                 <div class="carousel-item">
 
                     <div class="card-header bg-light p-2 rounded text-center bg-glass-effect d-flex flex-row justify-content-center align-items-center gap-2"> 
-                        <h2 class="h2"> ${slide.title} </h2> 
+                        <h2 class="h2"> ${slide.h} </h2> 
             `
+            if (slide.links) {
+                
+                for (const link of (slide.links)) {
+
+                    container += 
+                    `
+                    <a href="${link.anchorLink}" target="_blank" rel="noopener noreferrer">
+                        ${link.anchorText}
+                    </a>
+                    `;
+                }
+            }
 
             container +=
             `
                     </div>
 
                     <div class="card mb-3 bg-glass-effect">
-                        <img class="w-50 m-auto"  src="${slide.image}" class="card-img-top img-thumbnail" alt="${slide.title}">
+                        <img src="${slide.img}" class="card-img-top img-thumbnail" alt="${slide.alt}">
                         <div class="card-body">
-                            <p class="card-text h5"> ${slide.description} </p>
+                            <p class="card-text h5"> ${slide.p} </p>
+                            <div class="mt-3">
+                                <span> Usando: </span> <small class="text-body-secondary"> ${tagsString} </small>
+                            </div>
                         </div>
                     </div>
                 </div>

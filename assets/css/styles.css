@@ -1595,21 +1595,6 @@ input[type="number"]::-webkit-outer-spin-button {
       flex-direction: column;
     }
   }
-  
-/* navbar */
-@media (min-width: 767px) {
-  #logoMenu{
-  display: none;
-  }
-  #logoMenu1{
-  display: flex !important;
-  }
-}
-@media (max-width: 1000px){
-  #logoMenu{
-  display: flex !important;
-  }
-  #logoMenu1{
-  display: none;
-  }
-}
+
+
+
