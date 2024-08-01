@@ -124,8 +124,6 @@ export class ProductUtils {
         //sort by rating
         let sortedProducts = products.sort((a, b) => b.rating - a.rating);
 
-        console.log(sortedProducts);
-
         //get the top X items
         const topProducts = sortedProducts.slice(0, topX);
 

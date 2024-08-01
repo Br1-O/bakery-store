@@ -1,5 +1,5 @@
 //display content of billboard json into container
-export const billboard = (adList = {adImg: "", adAlt: ""}) => {
+export const billboard = (id, adList = {adImg: "", adAlt: ""}) => {
 
     //final template storage
     let billboard = "";
@@ -11,7 +11,7 @@ export const billboard = (adList = {adImg: "", adAlt: ""}) => {
         //add filled ad's template into variable
         slides += 
         `
-            <div class="carousel-item ${index === 0 ? "active" : ""} billboard-container">
+            <div class="carousel-item ${index === 0 ? "active" : ""} billboard-container"  data-bs-interval="3800">
                 <a href="${ad.adLink}">
                     <img class="card-img-top img-fluid billboard-image" alt="${ad.adImg}" src= ${ad.adImg} loading="lazy">
                 </a>
@@ -22,17 +22,17 @@ export const billboard = (adList = {adImg: "", adAlt: ""}) => {
 
     billboard = 
     `        
-    <div id="carrouselBillboard" class="carousel slide w-100 billboardCarrousel" data-bs-ride="carousel">
+    <div id="${id}" class="carousel slide w-100 billboardCarrousel" data-bs-ride="carousel">
 
-        <div class="carousel-inner" style="height:50vh;">
+        <div class="carousel-inner">
             ${slides}
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carrouselBillboard" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#${id}" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Anterior</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carrouselBillboard" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#${id}" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Siguiente</span>
         </button>

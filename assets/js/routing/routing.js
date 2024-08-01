@@ -179,6 +179,12 @@ export const updateContent = async() => {
                     }                    
                 );
 
+                //manually initialize carousels
+                const carousels = document.querySelectorAll('.carousel');
+                carousels.forEach(carousel => {
+                    new bootstrap.Carousel(carousel);
+                });
+
             break;
 
             //store page

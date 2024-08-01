@@ -13,7 +13,7 @@ export const billboardMainPage = (billboard) => {
         {adImg: "assets/resources/images/imgs/billboard/billboard-5.jpg", adLink:"#tienda", adAlt: "imagen-promociones-5"}
     ]
 
-    billboardMainPage = billboard(adList);
+    billboardMainPage = billboard("mainPageBillboard", adList);
 
     //set container's content as template
     return billboardMainPage;

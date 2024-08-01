@@ -982,6 +982,15 @@ select option{
 
 .billboardCarrousel{
   margin-top: 7rem;
+  height:80vh;
+}
+
+#mainPageBillboard{
+  margin-top: 15vh;
+}
+
+.billboardCarrousel .carousel-inner{
+  height:80vh;
 }
 
 .billboard-container{
@@ -1544,6 +1553,15 @@ input[type="number"]::-webkit-outer-spin-button {
 
     .billboardCarrousel{
       margin-top: 7rem;
+      height:25vh;
+    }
+    
+    #mainPageBillboard{
+      margin-top: 15vh;
+    }
+    
+    .billboardCarrousel .carousel-inner{
+      height:25vh;
     }
 
     /*■■■■■■■■■■■■■■■■■■ Product page ■■■■■■■■■■■■■■■■■■*/
@@ -1577,7 +1595,22 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
 /* ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ Medium screens ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
-@media screen and (min-width: 769px) and (max-width: 992px){
+@media screen and (min-width: 577px) and (max-width: 992px){
+
+  /*■■■■■■■■■■■■■■■■■■ Main page ■■■■■■■■■■■■■■■■■■*/
+
+  .billboardCarrousel{
+    margin-top: 7rem;
+    height:30vh !important;
+  }
+  
+  #mainPageBillboard{
+    margin-top: 15vh;
+  }
+  
+  .billboardCarrousel .carousel-inner{
+    height:30vh !important;
+  }
 
   /*■■■■■■■■■■■■■■■■■■ Product page ■■■■■■■■■■■■■■■■■■*/
 
@@ -1595,6 +1628,22 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ Large screens ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 @media screen and (min-width: 993px) and (max-width: 1600px){
+
+  
+  /*■■■■■■■■■■■■■■■■■■ Main page ■■■■■■■■■■■■■■■■■■*/
+
+  .billboardCarrousel{
+    margin-top: 7rem;
+    height:58vh !important;
+  }
+  
+  #mainPageBillboard{
+    margin-top: 15vh;
+  }
+  
+  .billboardCarrousel .carousel-inner{
+    height:58vh !important;
+  }
 
   /*■■■■■■■■■■■■■■■■■■ Product page ■■■■■■■■■■■■■■■■■■*/
 
