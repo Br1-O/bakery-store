@@ -70,9 +70,6 @@ export class ProductUtils {
 
     static getAllProductsInCategory = (category) => {
 
-        console.log(ProductUtils.allProductsList);
-
-
         //get products list from global state
         let products = ProductUtils.allProductsList;
     

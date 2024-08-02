@@ -76,7 +76,7 @@ const sessionNavBar = `
 //header tag
 const header = document.getElementById( 'navContainer' );
 
-export const navBar = ( isConnected = false ) =>
+export const navBarBakery = ( isConnected = false ) =>
 {
 
     //change content of navBar

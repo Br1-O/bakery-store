@@ -51,7 +51,7 @@ const footerContent = (
     let footer = 
     `      
     <!-- Footer -->
-    <footer class="d-flex flex-row justify-content-around align-items-start px-5 py-3 w-100" id="contact">
+    <footer class="d-flex flex-column flex-sm-row justify-content-center align-items-center justify-content-sm-around align-items-sm-start px-1 py-3 w-100" id="contact">
     `;
 
     //check if there are extra columns
@@ -158,9 +158,6 @@ const footerContent = (
         }
 
         //add social media icons
-
-       
-
         footer += 
         `
                 <div class="d-flex flex-row justify-content-start align-items-center gap-3 flex-wrap">
@@ -183,13 +180,12 @@ const footerContent = (
                 </div>
         `;
     }
+
      //select footer parent container for columns based on the presence of extra columns
      footer += 
      `      
-         <div class="w-100 mt-4 p-2 d-flex flex-column justify-content-centerflex-md-row align-items-center gap-4">
+        <div class="w-100 mt-4 p-2 d-flex flex-column justify-content-center flex-md-row align-items-center gap-4">
      `;
-
-    
 
      //add social media icons with links and arial labels
      if (content.socialMediaLinks) {

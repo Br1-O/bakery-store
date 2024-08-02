@@ -31,3 +31,30 @@ export const dropdown = (category = {titleCategoryText: "", titleCategoryLink: "
 
     return dropdown;
 };
+
+export const dropdownEventListeners = () => {
+
+    //select all dropdown btns
+    const dropdownAll = document.querySelectorAll('.dropdown-toggle');
+
+    // Convert NodeList to array and initialize Bootstrap Dropdown
+    const dropdownList = [...dropdownAll].map(dropdownToggleEl => {
+
+        // Initialize Bootstrap Dropdown for each button
+        const dropdown = new bootstrap.Dropdown(dropdownToggleEl);
+
+        // Get the associated dropdown menu
+        const dropdownMenu = dropdownToggleEl.parentElement.querySelector('.dropdown-menu');
+
+        // Add your event listeners or manage dropdown menu here
+        dropdownToggleEl.addEventListener('mouseenter', () => {
+            if (window.innerWidth >= 992) {
+                dropdownMenu.classList.add('show'); //show menu
+            }
+        });
+
+        dropdownToggleEl.addEventListener('mouseleave', () => {
+            dropdownMenu.classList.remove('show'); // Hide menu
+        });
+    });
+}

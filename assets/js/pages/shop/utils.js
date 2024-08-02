@@ -1,5 +1,5 @@
 // Function to render a product page w/dependency injections
-const renderCategoryPage = async(categoryProductsList, userData, redirectToPage, setUserDataFromSessionData, notFoundMessage, displayProducts, productCard) => {
+const renderCategoryPage = async(category, categoryProductsList, userData, redirectToPage, setUserDataFromSessionData, notFoundMessage, displayProducts, productCard) => {
 
     //container for page content
     const categoryContainer = document.getElementById("container-trending-products");
@@ -14,6 +14,13 @@ const renderCategoryPage = async(categoryProductsList, userData, redirectToPage,
 
         //container for page content
         const categoryContainer = document.getElementById("container-trending-products");
+
+        //change title based on the category
+        const shopTitle = document.getElementById("shopMainTitle");
+        if (shopTitle) {
+            shopTitle.innerText = category;
+            shopTitle.style.color = "var(--font-hover-color)";
+        }
 
         //display products into container
         displayProducts(categoryProductsList, categoryContainer, productCard);
@@ -32,15 +39,15 @@ export const categoryRouteHandler = async (category, ProductUtils, userData, red
     //get all products in the category
     const categoryProductsList = ProductUtils.getAllProductsInCategory(category[0]);    
 
-    //render the category's page
-    await renderCategoryPage(categoryProductsList, userData, redirectToPage, setUserDataFromSessionData, notFoundMessage, displayProducts, productCard);
-
     //change category name to capitalize first letter and change word if needed
     let formatedCategoryName = category[0][0].toUpperCase() + category[0].slice(1);
 
     if(formatedCategoryName === "Casero"){
         formatedCategoryName = "Para casa";
     }
+
+    //render the category's page
+    await renderCategoryPage(formatedCategoryName, categoryProductsList, userData, redirectToPage, setUserDataFromSessionData, notFoundMessage, displayProducts, productCard);
 
     //change title of the document's window
     document.title = `${formatedCategoryName} · Bakery `;

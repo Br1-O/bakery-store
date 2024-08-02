@@ -22,7 +22,7 @@ export const billboard = (id, adList = {adImg: "", adAlt: ""}) => {
 
     billboard = 
     `        
-    <div id="${id}" class="carousel slide w-100 billboardCarrousel" data-bs-ride="carousel">
+    <div id="${id}" class="carousel slide w-100 billboardCarrousel mb-5" data-bs-ride="carousel">
 
         <div class="carousel-inner">
             ${slides}

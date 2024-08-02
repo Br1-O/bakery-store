@@ -2,9 +2,9 @@
 import { fetchData, fetchInternalData, deleteFetch, postFetch } from "../utils/fetch.js";
 import { redirectToPage } from "../utils/redirectToPage.js";
 //navBar content
-import { navBar } from "../components/navBar.js";
+import { navBarBakery } from "../components/navBarBakery.js";
 //footer content
-import { footer } from "../components/footer.js";
+import { footer } from "../components/footers/footer.js";
 //validations
 import { maxLengthValidation, minLengthValidation, phoneNumberValidation, emailValidation, isAlpha, isNum, areValuesEqual, passwordValidation, nameValidation } from "../validation/utils.js";
 //page not found content
@@ -19,7 +19,7 @@ import { displayProducts } from "../pages/shop/products.js";
 import { shopContent } from "../pages/shop/MAIN.js";
 import { subtitle } from "../components/text/titles.js";
 import { anchor } from "../components/navs/anchor.js";
-import { dropdown } from "../components/navs/dropDown.js";
+import { dropdown, dropdownEventListeners } from "../components/navs/dropDown.js";
 import { productCard } from "../components/cards/productCard.js";
 import { formSelect } from "../components/forms/select.js";
 import { btnsGroupPagination } from "../components/btns/btnsGroupPagination.js";
@@ -34,6 +34,7 @@ import { carrousel } from "../components/dataDisplayers/carrousel.js";
 import { billboard } from "../components/dataDisplayers/billboard.js";
 import { billboardMainPage } from "../components/billboardMainPage.js";
 import { btnWithIcon } from "../components/btns/btnWithIcon.js";
+import { footerBakery } from "../components/footerBakery.js";
 
 //define company name to use in ti
 const companyName = "Bakery";
@@ -90,100 +91,13 @@ export const updateContent = async() => {
                 document.title =  ` ${companyName} · Panaderia artesanal `;
 
                 //include proper navbar
-                navBar(userData.isSessionSet);
+                navBarBakery(userData.isSessionSet);
 
                 //update home content
                 content.innerHTML = homeContent(ProductUtils, billboard, billboardMainPage, carrousel, carrouselMostPopularProducts);
 
                 //include footer
-                footer(
-                    true,
-                    {
-                        logo: "/assets/resources/images/imgs/logo.jpeg",
-                        logoAltText: "",
-                        socialMediaLinks: [
-                            {
-                                iconClass: "bx bxl-facebook",
-                                link: "https://www.linkedin.com/in/bortuno",
-                                ariaLabel: "facebook"
-                            },
-                            {
-                                iconClass: "bx bxl-instagram",
-                                link: "https://github.com/Br1-O?tab=repositories",
-                                ariaLabel: "instagram"
-                            },
-                            {
-                                iconClass: "bx bxl-twitter",
-                                link: "https://wa.me/5491112345678",
-                                ariaLabel: "twitter"
-                            }
-                        ],
-                        columns:
-                        [
-                            {
-                                title: "",
-                                links:
-                                [
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Sobre nosotros"
-                                    },
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Tienda"
-                                    },
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Menú"
-                                    }
-                                ]
-                            },
-                            {
-                                title: "",
-                                links:
-                                [
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Recetas"
-                                    },
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Galeria"
-                                    },
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Contacto"
-                                    }
-                                ]
-                            },
-                            {
-                                title: "",
-                                links:
-                                [
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Politica de privacidad"
-                                    },
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Términos y condiciones"
-                                    },
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Politica de Cookies"
-                                    }
-                                ]
-                            }
-                        ]
-                    
-                    }                    
-                );
-
-                //manually initialize carousels
-                const carousels = document.querySelectorAll('.carousel');
-                carousels.forEach(carousel => {
-                    new bootstrap.Carousel(carousel);
-                });
+                footerBakery(footer);
 
             break;
 
@@ -194,7 +108,7 @@ export const updateContent = async() => {
                 document.title =  ` ${companyName} · Tienda Online `;
 
                 //include proper navbar
-                navBar(userData.isSessionSet);
+                navBarBakery(userData.isSessionSet);
 
                 //update page content
                 content.innerHTML = shopContent(
@@ -216,88 +130,7 @@ export const updateContent = async() => {
                 displayProducts(products, shopContainerTrendingProducts, productCard);
 
                 //include footer
-                footer(
-                    true,
-                    {
-                        logo: "/assets/resources/images/imgs/logo.jpeg",
-                        logoAltText: "",
-                        socialMediaLinks: [
-                            {
-                                iconClass: "bx bxl-facebook",
-                                link: "https://www.linkedin.com/in/bortuno",
-                                ariaLabel: "facebook"
-                            },
-                            {
-                                iconClass: "bx bxl-instagram",
-                                link: "https://github.com/Br1-O?tab=repositories",
-                                ariaLabel: "instagram"
-                            },
-                            {
-                                iconClass: "bx bxl-twitter",
-                                link: "https://wa.me/5491112345678",
-                                ariaLabel: "twitter"
-                            }
-                        ],
-                        columns:
-                        [
-                            {
-                                title: "",
-                                links:
-                                [
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Sobre nosotros"
-                                    },
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Tienda"
-                                    },
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Menú"
-                                    }
-                                ]
-                            },
-                            {
-                                title: "",
-                                links:
-                                [
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Recetas"
-                                    },
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Galeria"
-                                    },
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Contacto"
-                                    }
-                                ]
-                            },
-                            {
-                                title: "",
-                                links:
-                                [
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Politica de privacidad"
-                                    },
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Términos y condiciones"
-                                    },
-                                    {
-                                        anchorLink: "",
-                                        anchorText: "Politica de Cookies"
-                                    }
-                                ]
-                            }
-                        ]
-                    
-                    }                    
-                );
+                footerBakery(footer);
             }
             break;
             
@@ -308,12 +141,12 @@ export const updateContent = async() => {
                 document.title =  ` ${companyName} · Catalogo`;
 
                 //include proper navbar
-                navBar(userData.isSessionSet);
+                navBarBakery(userData.isSessionSet);
 
                 content.innerHTML = "";
 
                 //include footer
-                footer();
+                footerBakery(footer);
             break;
 
             //dinamic routes and not found page
@@ -387,7 +220,7 @@ export const updateContent = async() => {
                 }
 
                 //include proper navbar
-                navBar(userData.isSessionSet);
+                navBarBakery(userData.isSessionSet);
                 
             break;
         }
@@ -397,6 +230,18 @@ export const updateContent = async() => {
 
         //init Animation on Scroll library
         AOS.init();
+
+
+        //manually initialize bootstrap elements to avoid conflict on dinamic rendering of elements
+
+        //carousels
+        const carousels = document.querySelectorAll('.carousel');
+        carousels.forEach(carousel => {
+            new bootstrap.Carousel(carousel);
+        });
+
+        //Event Listeners for dinamic elements
+        dropdownEventListeners();
     }
 }
 
