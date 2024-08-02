@@ -66,7 +66,7 @@ export const navbar = (
     
     nav +=
     ` 
-        <ul class="d-flex flex-row justify-content-${navData.itemsPositionTextMenu} align-items-center ${navData.gapTextMenu}">
+        <ul class="d-flex flex-column justify-content-center align-items-start px-2 px-lg-0 flex-lg-row justify-content-lg-${navData.itemsPositionTextMenu} align-items-lg-center ${navData.gapTextMenu}">
     `;
 
     for (const item of (navData.items)) {
@@ -74,7 +74,7 @@ export const navbar = (
         navData.tabs ?
         nav += 
         `   
-                <li class="nav-item nav-tabs">
+                <li class="nav-item">
                     ${item}
                 </li>
         `

@@ -74,7 +74,7 @@ export const navBarCatalogueProducts = (anchor, dropdown) => {
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarCategoriesMenu" aria-controls="navBarCategoriesMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon" style="color:white;"></span>
             </button>
 
             <div class="collapse navbar-collapse justify-content-center" id="navBarCategoriesMenu">

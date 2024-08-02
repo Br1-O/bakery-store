@@ -7,8 +7,6 @@ export const carrouselMostPopularProducts = (ProductUtils, carrousel) => {
     let objectForCarrousel = {};
     let arrayForCarrousel = [];
 
-    console.log(mostPopularProducts);
-
     //create body for carrousel
     for (const product of mostPopularProducts) {
         

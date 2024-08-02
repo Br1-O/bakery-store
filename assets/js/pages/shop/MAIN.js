@@ -2,10 +2,18 @@ export const shopContent = (subtitle, anchor, dropDown, navbar, formSelect, btns
 
 let pageContent = 
 `        
-<!-- Trending Products -->
+<!-- Shop container -->
 <section class="position-relative py-3" style="margin-top:max(10vmax,10rem);">
 
-  ${subtitle("¡Conocé todos nuestros productos!", "var(--logo-bg-color)", 1, "var(--font-hover-color)")}
+  ${subtitle(
+    {
+    id:"shopMainTitle",
+    text: "¡Conocé todos nuestros productos!", 
+    textColor: "var(--logo-bg-color)", 
+    indexOfHighlightWord: 1, 
+    highlightColor: "var(--font-hover-color)"
+    }
+  )}
 
   ${navbar(anchor, dropDown)}
 
@@ -90,8 +98,8 @@ let pageContent =
 
   </div>
 
-  <!-- List of trending products -->
-  <div class="row d-flex justify-content-center align-items-center overflow-scroll gap-3 gap-md-5 w-75 m-auto py-5" id="container-trending-products">
+  <!-- List of products in shop -->
+  <div class="row d-flex justify-content-center align-items-center overflow-hidden gap-3 gap-md-5 w-75 m-auto py-5" id="container-trending-products">
   </div>
 
   ${btnsGroupPagination(

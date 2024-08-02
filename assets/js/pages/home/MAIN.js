@@ -1,6 +1,5 @@
 import { subtitle } from "../../components/text/titles.js";
 
-
 export const homeContent = (ProductUtils, billboard, billboardMainPage, carrousel, carrouselMostPopularProducts) => {
 
     let homeContent =
@@ -12,10 +11,18 @@ export const homeContent = (ProductUtils, billboard, billboardMainPage, carrouse
 
     </section>
 
-    <section id="prod-destacados" class="position-relative d-flex flex-column justify-content-center align-items-center pb-5" style="background-color: var(--main-bg-color);">
+    <section id="mostPopularProducts" class="position-relative d-flex flex-column justify-content-center align-items-center pb-5" style="background-color: var(--main-bg-color);">
 
-        ${subtitle( "Nuestros productos más populares", "var(--font-hover-color)", 3, "var(--logo-bg-color)" )}
-        
+        ${subtitle(
+            {
+            id:"shopMainTitle",
+            text: "Nuestros productos más populares", 
+            textColor: "var(--logo-bg-color)", 
+            indexOfHighlightWord: 3, 
+            highlightColor: "var(--font-hover-color)"
+            }
+        )}
+
         ${carrouselMostPopularProducts(ProductUtils, carrousel)}
         </section>
     `;

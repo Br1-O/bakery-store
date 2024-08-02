@@ -860,6 +860,8 @@ body{
   transition: all .8s ease;
 }
 
+/* ■■■■­■■­■■­■■­■■ Main Navbar ■■­■■­■■­■■­■■­■■­ ­*/
+
 .navbar{
   padding: 20px 10%;
 }
@@ -934,9 +936,20 @@ body{
   transform: scale(1.25);
 }
 
+.navbar-toggler{
+  border: solid 1px var(--font-hover-color);
+  margin: 0.5rem 0px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
 #menu-icon{
   display:none;
 }
+
+/* ■■■■­■■­■■­■■­■■ navBar Categories ■■­■■­■■­■■­■■­■■­ ­*/
 
 #navBarCategories{
   padding-bottom: 0px !important;
@@ -949,11 +962,6 @@ body{
   transition: all .4s ease;
 }
 
-/* dropdown menu display on hover */
-.dropdown:hover .dropdown-menu {
-  display: block;
-  margin-top: 0;
-}
 
 /* ■■■■­■■­■■­■■­■■ MAIN ■■­■■­■■­■■­■■­■■­ ­*/
 
@@ -982,6 +990,15 @@ select option{
 
 .billboardCarrousel{
   margin-top: 7rem;
+  height:75vh;
+}
+
+#mainPageBillboard{
+  margin-top: 15vh;
+}
+
+.billboardCarrousel .carousel-inner{
+  height:75vh;
 }
 
 .billboard-container{
@@ -1544,6 +1561,15 @@ input[type="number"]::-webkit-outer-spin-button {
 
     .billboardCarrousel{
       margin-top: 7rem;
+      height:25vh;
+    }
+    
+    #mainPageBillboard{
+      margin-top: 15vh;
+    }
+    
+    .billboardCarrousel .carousel-inner{
+      height:25vh;
     }
 
     /*■■■■■■■■■■■■■■■■■■ Product page ■■■■■■■■■■■■■■■■■■*/
@@ -1577,7 +1603,22 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
 /* ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ Medium screens ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
-@media screen and (min-width: 769px) and (max-width: 992px){
+@media screen and (min-width: 577px) and (max-width: 992px){
+
+  /*■■■■■■■■■■■■■■■■■■ Main page ■■■■■■■■■■■■■■■■■■*/
+
+  .billboardCarrousel{
+    margin-top: 7rem;
+    height:30vh !important;
+  }
+  
+  #mainPageBillboard{
+    margin-top: 15vh;
+  }
+  
+  .billboardCarrousel .carousel-inner{
+    height:30vh !important;
+  }
 
   /*■■■■■■■■■■■■■■■■■■ Product page ■■■■■■■■■■■■■■■■■■*/
 
@@ -1595,6 +1636,22 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ Large screens ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 @media screen and (min-width: 993px) and (max-width: 1600px){
+
+  
+  /*■■■■■■■■■■■■■■■■■■ Main page ■■■■■■■■■■■■■■■■■■*/
+
+  .billboardCarrousel{
+    margin-top: 7rem;
+    height:58vh !important;
+  }
+  
+  #mainPageBillboard{
+    margin-top: 15vh;
+  }
+  
+  .billboardCarrousel .carousel-inner{
+    height:58vh !important;
+  }
 
   /*■■■■■■■■■■■■■■■■■■ Product page ■■■■■■■■■■■■■■■■■■*/
 
