@@ -20,7 +20,7 @@ export const navBarCatalogueProducts = (anchor, dropdown) => {
         //for each product in the category push its anchor component in the array
         for (const product of allProductsInCategory) {
         
-            anchorItemsForCategory.push(anchor({anchorText: product.name, anchorLink: product.link}));
+            anchorItemsForCategory.push(anchor({anchorText: product.name, anchorLink: product.link, ariaLabel: product.name}));
         }
 
         let categoryNameForDisplay = category;
@@ -40,6 +40,7 @@ export const navBarCatalogueProducts = (anchor, dropdown) => {
                 {
                 titleCategoryText: categoryNameForDisplay,
                 titleCategoryLink: "#tienda/" + category,
+                titleCategoryAriaLabel: categoryNameForDisplay,
                 groupOptions: anchorItemsForCategory
                 }
             )
