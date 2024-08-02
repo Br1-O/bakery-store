@@ -141,19 +141,19 @@ export const updateContent = async() => {
             break;
             
             //products page
-            case 'menu':
+            //case 'menu':
 
                 //update title attribute of page
-                document.title =  ` ${companyName} · Catalogo`;
+                //document.title =  ` ${companyName} · Catalogo`;
 
                 //include proper navbar
-                navBarBakery(userData.isSessionSet);
+                //navBarBakery(userData.isSessionSet);
 
-                content.innerHTML = "";
+                //content.innerHTML = "";
 
                 //include footer
-                footerBakery(footer);
-            break;
+                //footerBakery(footer);
+            //break;
 
             //dinamic routes and not found page
             default:
