@@ -1,4 +1,4 @@
-export const shopContent = (subtitle, anchor, dropDown, navbar, formSelect, btnsGroupPagination) => {
+export const shopContent = (subtitle, anchor, dropDown, navbar, formSelect, products, btnsGroupPagination) => {
 
 let pageContent = 
 `        
@@ -100,6 +100,7 @@ let pageContent =
 
   <!-- List of products in shop -->
   <div class="row d-flex justify-content-center align-items-center overflow-hidden gap-3 gap-md-5 w-75 m-auto py-5" id="container-trending-products">
+      ${products}
   </div>
 
   ${btnsGroupPagination(
