@@ -110,6 +110,13 @@ export const updateContent = async() => {
                 //include proper navbar
                 navBarBakery(userData.isSessionSet);
 
+                //fetch to shop data
+                let products= ProductUtils.allProductsList; 
+
+                //display products template
+                let productsTemplate =                 
+                displayProducts(products, productCard);
+
                 //update page content
                 content.innerHTML = shopContent(
                     subtitle,
@@ -117,17 +124,16 @@ export const updateContent = async() => {
                     dropdown,
                     navBarCatalogueProducts,
                     formSelect,
+                    productsTemplate,
                     btnsGroupPagination
                 );
 
-                //products container
-                const shopContainerTrendingProducts = document.getElementById("container-trending-products");
-
-                //fetch to shop data
-                let products= ProductUtils.allProductsList; 
-
-                //display products into container
-                displayProducts(products, shopContainerTrendingProducts, productCard);
+                // //products container
+                // let productsContainer = document.createElement("div");
+                // productsContainer.id = "productsContainer";
+                // productsContainer.className = "row d-flex justify-content-center align-items-center overflow-hidden gap-3 gap-md-5 w-75 m-auto py-5";
+                // //append into main container
+                // content.appendChild(productsContainer);
 
                 //include footer
                 footerBakery(footer);
@@ -174,7 +180,14 @@ export const updateContent = async() => {
                         redirectToPage,
                         setUserDataFromSessionData,
                         notFoundMessage,
+                        shopContent,
+                        subtitle,
+                        anchor,
+                        dropdown,
+                        navBarCatalogueProducts,
+                        formSelect,
                         displayProducts,
+                        btnsGroupPagination,
                         productCard
                     );
                 });

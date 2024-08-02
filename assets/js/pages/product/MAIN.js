@@ -164,7 +164,7 @@ export const displaySingleProductPage = async(product, container, btnWithIcon, u
         
             <div id="product-page-container" class="row d-flex flex-column mt-5 pb-5" data-product="${product.id}" data-aos="fade-up" data-aos-offset="50" data-aos-duration="2000">
         
-                <section id="product-page-info"  class="d-flex flex-row">
+                <section id="product-page-info"  class="d-flex flex-column justify-content-center align-items-center flex-md-row justify-content-md-center align-items-md-center">
                     
                     <article id="product-images" class="col-5">
 

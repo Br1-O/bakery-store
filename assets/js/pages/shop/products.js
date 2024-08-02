@@ -1,5 +1,5 @@
 //display content of products json into container
-export const displayProducts = (productList, container, productCard) => {
+export const displayProducts = (productList, productCard) => {
 
     //final template storage
     let template = "";
@@ -162,7 +162,10 @@ export const displayProducts = (productList, container, productCard) => {
     });
 
     //set container's content as template
-    container.innerHTML = template;
+    return template;
+}
+
+export const hoverEffectForProductImages = () => {
 
     //get all imgs of products
     const productImgs = document.getElementsByClassName("product-image");
@@ -193,5 +196,4 @@ export const displayProducts = (productList, container, productCard) => {
             });
         } 
     });
-
 }

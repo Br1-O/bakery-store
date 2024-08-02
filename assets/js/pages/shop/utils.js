@@ -1,8 +1,16 @@
 // Function to render a product page w/dependency injections
-const renderCategoryPage = async(category, categoryProductsList, userData, redirectToPage, setUserDataFromSessionData, notFoundMessage, displayProducts, productCard) => {
+const renderCategoryPage = async(category, categoryProductsList, userData, redirectToPage, setUserDataFromSessionData, notFoundMessage, shopContent, 
+    subtitle,
+    anchor,
+    dropdown,
+    navBarCatalogueProducts,
+    formSelect,
+    displayProducts,
+    btnsGroupPagination, 
+    productCard) => {
 
     //container for page content
-    const categoryContainer = document.getElementById("container-trending-products");
+    const categoryContainer = document.getElementById("main");
 
     //check if product exists
     if (!categoryProductsList) {
@@ -12,8 +20,20 @@ const renderCategoryPage = async(category, categoryProductsList, userData, redir
         return;
     }else{
 
-        //container for page content
-        const categoryContainer = document.getElementById("container-trending-products");
+        //display products template
+        let productsTemplate =                 
+        displayProducts(categoryProductsList, productCard);
+
+        //update page content
+        categoryContainer.innerHTML = shopContent(
+            subtitle,
+            anchor,
+            dropdown,
+            navBarCatalogueProducts,
+            formSelect,
+            productsTemplate,
+            btnsGroupPagination
+        );
 
         //change title based on the category
         const shopTitle = document.getElementById("shopMainTitle");
@@ -21,9 +41,6 @@ const renderCategoryPage = async(category, categoryProductsList, userData, redir
             shopTitle.innerText = category;
             shopTitle.style.color = "var(--font-hover-color)";
         }
-
-        //display products into container
-        displayProducts(categoryProductsList, categoryContainer, productCard);
 
         //if user is logged update user's model data from session storage data
         if (userData.isSessionSet) {
@@ -34,7 +51,15 @@ const renderCategoryPage = async(category, categoryProductsList, userData, redir
 
 //handler to display single product page based on category and product's name
 //first array are the params, the other parameters are dependency injections
-export const categoryRouteHandler = async (category, ProductUtils, userData, redirectToPage, setUserDataFromSessionData, notFoundMessage, displayProducts, productCard) => {
+export const categoryRouteHandler = async (category, ProductUtils, userData, redirectToPage, setUserDataFromSessionData, notFoundMessage, shopContent,
+    subtitle,
+    anchor,
+    dropdown,
+    navBarCatalogueProducts,
+    formSelect,
+    displayProducts,
+    btnsGroupPagination, 
+    productCard) => {
 
     //get all products in the category
     const categoryProductsList = ProductUtils.getAllProductsInCategory(category[0]);    
@@ -47,7 +72,15 @@ export const categoryRouteHandler = async (category, ProductUtils, userData, red
     }
 
     //render the category's page
-    await renderCategoryPage(formatedCategoryName, categoryProductsList, userData, redirectToPage, setUserDataFromSessionData, notFoundMessage, displayProducts, productCard);
+    await renderCategoryPage(formatedCategoryName, categoryProductsList, userData, redirectToPage, setUserDataFromSessionData, notFoundMessage, shopContent, 
+        subtitle,
+        anchor,
+        dropdown,
+        navBarCatalogueProducts,
+        formSelect,
+        displayProducts,
+        btnsGroupPagination,
+        productCard);
 
     //change title of the document's window
     document.title = `${formatedCategoryName} · Bakery `;
