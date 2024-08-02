@@ -56,5 +56,15 @@ export const dropdownEventListeners = () => {
         dropdownToggleEl.addEventListener('mouseleave', () => {
             dropdownMenu.classList.remove('show'); // Hide menu
         });
+
+        dropdownMenu.addEventListener('mouseenter', () => {
+            if (window.innerWidth >= 992) {
+                dropdownMenu.classList.add('show'); //show menu
+            }
+        });
+
+        dropdownMenu.addEventListener('mouseleave', () => {
+            dropdownMenu.classList.remove('show'); // Hide menu
+        });
     });
 }
