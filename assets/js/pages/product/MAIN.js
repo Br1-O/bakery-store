@@ -162,38 +162,42 @@ export const displaySingleProductPage = async(product, container, btnWithIcon, u
         //add filled product's template into variable
         template = `
         
-            <div id="product-page-container" class="row d-flex flex-column mt-5 pb-5" data-product="${product.id}" data-aos="fade-up" data-aos-offset="50" data-aos-duration="2000">
+            <div id="product-page-container" class="row d-flex flex-column pb-2 justify-content-center align-items-center bg-glass-effect-darker mb-2" data-product="${product.id}" data-aos="fade-up" data-aos-offset="50" data-aos-duration="2000">
         
-                <section id="product-page-info"  class="d-flex flex-column justify-content-center align-items-center flex-md-row justify-content-md-center align-items-md-center">
+                <section id="product-page-info"  class="d-flex flex-column justify-content-center align-items-center flex-md-row justify-content-md-center align-items-md-start">
                     
-                    <article id="product-images" class="col-5">
+                    <article id="product-images" class="d-flex flex-row justify-content-center align-items-first-baseline col-10 col-md-10 col-xl-10">
 
-                        <div id="product-images-column"> 
+                        <div id="product-images-column""> 
                             ${previewImagesColumnTemplate}
                         </div>
 
                         <div id="product-images-selected"> 
                         
                             <a href=${product.image[0]} target="_blank">
-                                <img id="product-page-image" class="preview-image" src= ${product.image[0]} data-src=${product.image[0]} loading="lazy" alt="${product.name}">
+                                <img id="product-page-image" class="preview-image img-fluid" src= ${product.image[0]} data-src=${product.image[0]} loading="lazy" alt="${product.name}">
                             </a>
 
                         </div>
 
                     </article>
 
-                    <article id="product-details" class="d-flex flex-col col-7">
+                    <article id="product-details" class="d-flex flex-column col-10 col-md-6 col-lg-5 col-xl-4 flex-wrap">
 
                         <div class="inline-navigation-bar">
                             <p> 
 
                                 <a href="#tienda">
-                                    Tienda / 
+                                    Tienda
                                 </a>
 
+                                <span style="color=var(--logo-bg-color)"> / <span>
+
                                 <a href="#tienda/${product.categories[0]}">
-                                    ${categoryMayus} / 
+                                    ${categoryMayus}
                                 </a>
+
+                                <span style="color=var(--logo-bg-color)"> / <span>
 
                                 <span> ${product.name} </span>
 
@@ -202,13 +206,14 @@ export const displaySingleProductPage = async(product, container, btnWithIcon, u
 
                         <h2> ${product.name} </h2>
 
-                        <h4> $${product.price} </h4>
+                        <p id="product-page-description" class="bg-glass-effect-darker text-wrap"> ${product["description-cover"]} </p>
 
-                        <p id="product-page-description"> ${product["description-cover"]} </p>
+                        <h4> Ingredientes </h4>
 
-                        <p id="product-page-description"> Ingredientes: ${product.ingredients} </p>
+                        <p id="product-page-description" class="bg-glass-effect-darker text-wrap mt-0"> ${product.ingredients} </p>
 
 
+                        <h4 class="align-self-end"> $${product.price} </h4>
 
                         <div class="flex col">
 
@@ -251,4 +256,21 @@ export const displaySingleProductPage = async(product, container, btnWithIcon, u
 
     //set product page template into container
     container.innerHTML = template;
+
+
+    //product image toggle with thumbnail images
+    let previewThumbnails = document.getElementsByClassName("preview-thumbnail");
+    let previewImage = document.querySelector(".preview-image");
+
+    for (const thumbnail of previewThumbnails) {
+
+        let thumbnailSrc = thumbnail.src;
+
+        //change the source of the preview image to the thumbnail's source
+        thumbnail.addEventListener("click", () => {
+            previewImage.src = thumbnailSrc;
+            //change the href of the a so it opens the new image when clicked
+            (previewImage.parentElement).href = thumbnailSrc;
+        });
+    }
 }

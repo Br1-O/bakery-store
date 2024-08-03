@@ -9,9 +9,9 @@ export const carrouselMostPopularProducts = (ProductUtils, carrousel) => {
 
     //create body for carrousel
     for (const product of mostPopularProducts) {
-        
+
         objectForCarrousel = {
-            img: product.image[0],
+            imgs: product.image,
             tags: [product.categories],
             h: product.name,
             p: product["description-cover"],
