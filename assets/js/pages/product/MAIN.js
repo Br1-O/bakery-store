@@ -5,7 +5,7 @@ export const displaySingleProductPage = async(product, container, btnWithIcon, u
     let tagsTemplate = "";
     let ratingTemplate = "";
 
-    //add product's info into literal template
+    // ■■■■■ add product's info into literal template ■■■■■ //
 
         //set rating template
         switch (parseFloat(product.rating)) {
@@ -112,7 +112,7 @@ export const displaySingleProductPage = async(product, container, btnWithIcon, u
 
         let tagColor = "";
 
-        //set tags template
+        // ■■■■■ set tags template ■■■■■ //
         (product.tags).forEach(tag => {
 
             //set proper bg color of tag
@@ -138,7 +138,7 @@ export const displaySingleProductPage = async(product, container, btnWithIcon, u
                             </a>`;
         });
 
-        //set category with mayus on first letter
+        // ■■■■■ set category with mayus on first letter ■■■■■ //
         let categoryMayus = (((product.categories[0]).charAt(0)).toUpperCase()) + (product.categories[0]).slice(1);
 
         //set preview images template
@@ -153,16 +153,64 @@ export const displaySingleProductPage = async(product, container, btnWithIcon, u
         
         });
 
-        //template for sizes options
-        let templateSizesOption = "";
+        // ■■■■■ template for ingredients ■■■■■ //
+        let ingredients = "";
 
-        //template for colors options
-        let templateColorsOption = "";
+        for (const ingredient of (product.ingredients)) {
+            
+            ingredients += "· " + ingredient + "<br>";
+        }
 
-        //add filled product's template into variable
+        // ■■■■■ template for dietary specifications ■■■■■ //
+        let dietarySpecifications = "";
+
+        if (product.isCeliacOk) {
+
+            dietarySpecifications +=
+            "<span class='d-block'> <i class='bx bx-check-square'> </i> Libre de gluten <span>";
+        }
+
+        if (product.isVegan) {
+
+            dietarySpecifications +=
+            "<span class='d-block'> <i class='bx bx bx-leaf'></i> Vegano <span>";
+        }
+
+        if (product.isNutFree) {
+
+            dietarySpecifications +=
+            "<span class='d-block'> <i class='bx bx-check-square'></i> Libre de frutos secos <span>";
+        }
+
+        // ■■■■■ template for flavour options ■■■■■ //
+        let templateFlavourOptions = "";
+
+        if ((product.flavours).length > 0) {
+
+            templateFlavourOptions = 
+            `
+            <h4> Sabores/Rellenos: </h4>
+            <p id="product-page-description" class="bg-glass-effect-darker text-wrap mt-0" aria-label="sabores/rellenos disponibles"> 
+            `;    
+            
+            for (const flavour of (product.flavours)) {
+                
+                templateFlavourOptions +=
+                `
+                    ${flavour} <br>
+                `;
+            }
+
+            templateFlavourOptions += 
+            `
+            </p>
+            `;
+        }
+
+        // ■■■■■ add filled product's template into variable ■■■■■ //
         template = `
         
-            <div id="product-page-container" class="row d-flex flex-column pb-2 justify-content-center align-items-center bg-glass-effect-darker mb-2" data-product="${product.id}" data-aos="fade-up" data-aos-offset="50" data-aos-duration="2000">
+            <div id="product-page-container" class="row d-flex flex-column pb-2 justify-content-center align-items-center bg-glass-effect-darker mb-2 py-xxl-5" data-product="${product.id}" data-aos="fade-up" data-aos-offset="50" data-aos-duration="2000">
         
                 <section id="product-page-info"  class="d-flex flex-column justify-content-center align-items-center flex-md-row justify-content-md-center align-items-md-start">
                     
@@ -182,7 +230,7 @@ export const displaySingleProductPage = async(product, container, btnWithIcon, u
 
                     </article>
 
-                    <article id="product-details" class="d-flex flex-column col-10 col-md-6 col-lg-5 col-xl-4 flex-wrap">
+                    <article id="product-details" class="d-flex flex-column col-10 col-md-6 col-lg-5 col-xl-4 flex-wrap overflow-hidden">
 
                         <div class="inline-navigation-bar">
                             <p> 
@@ -206,31 +254,40 @@ export const displaySingleProductPage = async(product, container, btnWithIcon, u
 
                         <h2> ${product.name} </h2>
 
-                        <p id="product-page-description" class="bg-glass-effect-darker text-wrap"> ${product["description-cover"]} </p>
+                        <p id="product-page-description" class="bg-glass-effect-darker text-wrap"> 
+                            ${product["description-cover"]} 
+                        </p>
 
                         <h4> Ingredientes </h4>
 
-                        <p id="product-page-description" class="bg-glass-effect-darker text-wrap mt-0"> ${product.ingredients} </p>
+                        <p id="product-page-description" class="bg-glass-effect-darker text-wrap mt-0" aria-label="ingredientes empleados"> 
+                            ${ingredients} 
+                        </p>
 
+                        ${templateFlavourOptions}
 
-                        <h4 class="align-self-end"> $${product.price} </h4>
+                        <p id="product-page-description" class="text-wrap mt-0" style="box-shadow:none;" aria-label="especificaciones de veganismo, gluten y frutos secos"> 
+                            ${dietarySpecifications} 
+                        </p>
+
+                        <h4 class="align-self-end" aria-label="precio del producto"> $${product.price} </h4>
 
                         <div class="flex col">
 
                             <p id="product-add-to-cart-display-quantity"></p>
 
-                            <div id="product-add-to-cart-container">
+                            <div id="product-add-to-cart-container" class="w-75 w-md-50 py-1">
                                     
-                            <div class="input-group d-flex flex-row justify-content-around align-items-center h-content">
-                                <input type="number" class="form-control w-25 h-75" id="numberInput" value="0" min="0">
+                                <div class="input-group d-flex flex-row justify-content-around align-items-center">
+                                    <input type="number" class="form-control w-25 h-100" id="numberInput" value="0" min="0">
 
-                                ${btnWithIcon(
-                                    {
-                                        id: "btn-add-to-card",
-                                        text: "Agregar a carrito"
-                                    }
-                                )}
-                            </div>
+                                    ${btnWithIcon(
+                                        {
+                                            id: "btn-add-to-card",
+                                            text: "Agregar a carrito"
+                                        }
+                                    )}
+                                </div>
 
                             </div>
                         
@@ -254,11 +311,11 @@ export const displaySingleProductPage = async(product, container, btnWithIcon, u
     
         `;
 
-    //set product page template into container
+    // ■■■■■ set product page template into container ■■■■■ //
     container.innerHTML = template;
 
 
-    //product image toggle with thumbnail images
+    // ■■■■■ product image toggle with thumbnail images ■■■■■ //
     let previewThumbnails = document.getElementsByClassName("preview-thumbnail");
     let previewImage = document.querySelector(".preview-image");
 

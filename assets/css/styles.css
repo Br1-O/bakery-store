@@ -1369,8 +1369,9 @@ footer i:hover{
   width: 100%;
   min-height: max(4vmax, 4rem);
   color: var(--font-hover-color);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   border-radius: 5px;
+  line-height: 1.25;
 
   font-family: var(--font-main, "sans-serif");
   font-size: 1.2rem;
@@ -1380,8 +1381,9 @@ footer i:hover{
 
   transition: all .4s ease;
 
-  box-shadow: -2px -2px 1px rgb(150, 150, 150);
+  box-shadow: 2px 2px 1px rgb(150, 150, 150);
 }
+
 
 #product-stock-info{
   font-weight: 400;
@@ -1448,7 +1450,7 @@ footer i:hover{
 
 #product-add-to-cart-container{
   width: 100%;
-  height: max(3vmax, 2.5rem);
+  max-height: max(4.5vmax, 4.5rem);
 
   display: flex;
   flex-direction: row;
@@ -1499,12 +1501,6 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   /* -webkit-appearance: none; */
   height: max(3vmax, 2.5rem);
-}
-
-#btn-cart-add{
-  font-size: max(1.25vmax, 1.25rem);
-  width: 80%;
-  margin: 0px;
 }
 
 #btn-cart-add:hover i{

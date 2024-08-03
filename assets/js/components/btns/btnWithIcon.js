@@ -18,7 +18,7 @@ export const btnWithIcon = (btnData =
            
     let btn = 
     `
-    <button class="${btnData.backgroundColorClass} w-75 form-btn text-wrap overflow-hidden" id="${btnData.id}">
+    <button class="${btnData.backgroundColorClass} w-75 h-100 form-btn text-wrap overflow-hidden" id="${btnData.id}">
         <i class='${btnData.iconClass} mx-1'></i>
         ${btnData.text}
     </button>
