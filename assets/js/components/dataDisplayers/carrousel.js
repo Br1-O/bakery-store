@@ -1,4 +1,4 @@
-export const carrousel = (id = "carousel", slideArray = [{img:"", alt:"", h:"", p:"", tags: [""], links: [{anchorText: "", anchorLink: ""}]}]) => {
+export const carrousel = (id = "carousel", slideArray = [{imgs:[], alt:"", h:"", p:"", tags: [""], links: [{anchorText: "", anchorLink: ""}]}]) => {
 
     let container = 
     `
@@ -43,7 +43,9 @@ export const carrousel = (id = "carousel", slideArray = [{img:"", alt:"", h:"", 
 
                     <div class="card-image-container h-75 w-100 overflow-hidden">
                         <a href="${slide.links[0].anchorLink}">
-                            <img id="product-img-${slide.h}" class="card-img-top img-fluid product-image" alt="${slide.h}" src= ${slide.img} loading="lazy">
+                            <img id="product-img-${slide.h}" class="card-img-top img-fluid product-image" alt="${slide.h}" src= ${slide.imgs[0]}  
+                            src2= ${slide.imgs[1] ? slide.imgs[1] : "none"} data-src=${slide.imgs[0]}
+                            loading="lazy">
                         </a>
                     </div>
 
@@ -89,7 +91,9 @@ export const carrousel = (id = "carousel", slideArray = [{img:"", alt:"", h:"", 
 
                         <div class="card-image-container h-75 w-100 overflow-hidden">
                             <a href="${slide.links[0].anchorLink}">
-                                <img id="product-img-${slide.h}" class="card-img-top img-fluid product-image" alt="${slide.h}" src= ${slide.img} loading="lazy">
+                                <img id="product-img-${slide.h}" class="card-img-top img-fluid product-image" alt="${slide.h}" src= ${slide.imgs[0]}  
+                                src2= ${slide.imgs[1] ? slide.imgs[1] : "none"} data-src=${slide.imgs[0]}
+                                loading="lazy">
                             </a>
                         </div>
 

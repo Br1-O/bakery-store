@@ -34,9 +34,9 @@ export const productCard = (
 
             <p class="card-text"> ${product.description} </p>
 
-            <h5 class="card-title align-self-center fw-bold mt-2"> $ ${product.price} </h5>
+            <h5 class="card-title align-self-center fw-bold mt-2" aria-label="precio del producto"> $ ${product.price} </h5>
 
-            <div class="input-group d-flex flex-row justify-content-around align-items-center h-content">
+            <div class="input-group d-flex flex-row justify-content-around align-items-center h-content w-100" style="max-height:max(4vmax,4rem);">
                 <input type="number" class="form-control w-25 h-100" id="numberInput" value="0" min="0">
 
                 ${btnWithIcon(

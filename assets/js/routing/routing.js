@@ -35,6 +35,7 @@ import { billboard } from "../components/dataDisplayers/billboard.js";
 import { billboardMainPage } from "../components/billboardMainPage.js";
 import { btnWithIcon } from "../components/btns/btnWithIcon.js";
 import { footerBakery } from "../components/footerBakery.js";
+import { imgsSwitchEffectOnHover } from "../utils/effects.js";
 
 //define company name to use in ti
 const companyName = "Bakery";
@@ -74,6 +75,9 @@ export const updateContent = async() => {
     //route parameters
     const routeParams = hash.split('/').filter(param => param);
 
+    //default footer for all pages
+    const defaultFooter = footerBakery(footer);
+
     //■■■■■■■■■■■■■■■■■■■■ hash system routing ■■■■■■■■■■■■■■■■■■■■//
 
     if (section) {
@@ -97,7 +101,7 @@ export const updateContent = async() => {
                 content.innerHTML = homeContent(ProductUtils, billboard, billboardMainPage, carrousel, carrouselMostPopularProducts);
 
                 //include footer
-                footerBakery(footer);
+                defaultFooter;
 
             break;
 
@@ -136,7 +140,7 @@ export const updateContent = async() => {
                 // content.appendChild(productsContainer);
 
                 //include footer
-                footerBakery(footer);
+                defaultFooter;
             }
             break;
             
@@ -234,6 +238,9 @@ export const updateContent = async() => {
 
                 //include proper navbar
                 navBarBakery(userData.isSessionSet);
+
+                //include footer
+                defaultFooter;
                 
             break;
         }
@@ -243,7 +250,6 @@ export const updateContent = async() => {
 
         //init Animation on Scroll library
         AOS.init();
-
 
         //manually initialize bootstrap elements to avoid conflict on dinamic rendering of elements
 
@@ -255,6 +261,9 @@ export const updateContent = async() => {
 
         //Event Listeners for dinamic elements
         dropdownEventListeners();
+
+        //Effects for elements
+        imgsSwitchEffectOnHover();
     }
 }
 
