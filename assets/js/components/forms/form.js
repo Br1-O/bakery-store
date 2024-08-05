@@ -2,7 +2,7 @@ export const form = (id = "") => {
 
     let form =
     `   
-    <form id="${id}" class="container d-flex flex-column justify-content-center align-items-center p-3 rounded col-12 col-md-8 col-xl-4 fs-3 fw-2 bg-glass-effect" data-aos="zoom-in" data-aos-offset="100" data-aos-duration="2000">
+    <form id="${id}" class="container d-flex flex-column justify-content-center align-items-center p-3 rounded col-12 col-md-8 col-xl-4 fs-3 fw-2 bg-glass-effect-darker" data-aos="zoom-in" data-aos-offset="100" data-aos-duration="2000">
         <div class="container-fluid row d-flex flex-row justify-content-center">
             <div class="col-12">
                 <div class="input-group mb-3 d-flex flex-column justify-content-center align-items-start gap-3 w-100">
