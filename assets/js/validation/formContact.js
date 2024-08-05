@@ -88,7 +88,7 @@ export const validationFormContact = (maxLengthValidation, minLengthValidation, 
                     });
                     Toast.fire({
                         icon: "success",
-                        title: `¡Formulario enviado con éxito! <br><br> ¡Te responderé a la brevedad!`
+                        title: `¡Formulario enviado con éxito! <br><br> ¡Te responderemos a la brevedad!`
                     });
 
                     //reset form fields values

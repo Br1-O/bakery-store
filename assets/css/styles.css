@@ -1554,7 +1554,76 @@ input[type="number"]::-webkit-outer-spin-button {
   transform: scale(1.5);
 }
 
+/* ■■■■­■■­■■­■■­■■ Contact Page ■■­■■­■■­■■­■■­■■­ ­*/
 
+.inpage-logo{
+  max-width: max(10vmax, 10rem);
+  height: auto;
+
+  transition: all .8s ease;
+}
+
+#contact{
+  margin-top: max(7.5vmax, 7.5rem);
+}
+
+#contact-data{
+  margin-top: 1.5rem;
+  font-size: max(1.5vmax, 1.5rem);
+}
+
+#contact-data a{
+  color: var(--font-hover-color);
+  text-decoration: none;
+  line-height: 2.25rem;
+}
+
+#contact-social-media a{
+  cursor: pointer !important;
+}
+
+#contact-social-media a:hover{
+  transform: scale(1.25);
+  filter: brightness(1.25);
+}
+
+.map{
+  height: max(25vmax, 25rem) !important;
+}
+
+form{
+  color: var(--font-hover-color);
+  margin: auto;
+}
+
+.form-btn{
+  max-width: max(15vmax, 15rem);
+
+  font-family: var(--font-main, "sans-serif");
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: var(--font-hover-color);
+  text-wrap: wrap;
+
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+
+  /* glass like effect */
+  background-color:  var(--main-bg-color);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  cursor: pointer;
+
+  transition: all .2s ease;
+}
+
+.form-btn:hover{
+  background-color: var(--logo-bg-color);
+  filter: brightness(1.15);
+  transform: scale(1.025);
+}
 
 /* ■■■■­■■­■■­■■­■■ MEDIA QUERIES ■■­■■­■■­■■­■■­■■­ ­*/
 

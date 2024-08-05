@@ -37,6 +37,9 @@ import { btnWithIcon } from "../components/btns/btnWithIcon.js";
 import { footerBakery } from "../components/footerBakery.js";
 import { imgsSwitchEffectOnHover } from "../utils/effects.js";
 
+import { contactPageContent } from "../pages/contact/MAIN.js";
+import { validationFormContact } from "../validation/formContact.js";
+
 //define company name to use in ti
 const companyName = "Bakery";
 
@@ -141,6 +144,25 @@ export const updateContent = async() => {
 
                 //include footer
                 defaultFooter;
+            }
+            break;
+
+            case 'contacto':
+            {
+            //update title attribute of page
+            document.title =  ` ${companyName} · Contacto `;
+
+            //include proper navbar
+            navBarBakery(userData.isSessionSet);
+
+            //update page content
+            content.innerHTML = contactPageContent();
+
+            //apply validation event on contact form
+            validationFormContact(maxLengthValidation, minLengthValidation, nameValidation, emailValidation);
+                
+            //include footer
+            defaultFooter;
             }
             break;
             
