@@ -163,6 +163,23 @@ El font usado para este proyecto fue:
 
 El logo fue creado usando las herramientas de generación de imagenes de ![Gemini](https://img.shields.io/badge/Gemini-purple)
 
+## Preview
+
+#### Pagina Principal ('/')
+![documentation-main1](https://github.com/user-attachments/assets/60427fe9-9a30-4a34-8dad-bd6b9ce6b439)
+![documentation-main2](https://github.com/user-attachments/assets/9d748898-bf71-4f81-aabf-661218c24f29)
+
+#### Tienda ('/#tienda')
+![documentation-shop1](https://github.com/user-attachments/assets/e15435fc-9514-49d5-b75f-a07d16e287f4)
+![documentation-shop3](https://github.com/user-attachments/assets/26a1b725-3d66-4b36-8d92-c443ba03805e)
+
+#### Producto ('/#tienda/[categoria]/[nombre-del-producto]')
+![documentation-producto1](https://github.com/user-attachments/assets/167787e9-65dc-4f9e-9182-917a361a346e)
+![documentation-producto2](https://github.com/user-attachments/assets/43a9ccf5-4f4b-44f1-86c7-640481555d54)
+
+#### No encontrado ('/[no-válido]')
+![documentation-notFound](https://github.com/user-attachments/assets/5f35193f-e7e0-4a9d-beb1-2af650cdef21)
+
 <!-- GETTING STARTED -->
 ## Cómo comenzar a utilizarlo
 
@@ -264,3 +281,8 @@ A continuación se muestran los pasos a seguir para instalar este proyecto.
 
 [LiveServer.com]: https://img.shields.io/badge/LiveServer-4993CD?logo=visual-studio-code&logoColor=white&style=for-the-badge
 [LiveServer-url]: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+
+
+
+
+
