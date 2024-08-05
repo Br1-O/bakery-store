@@ -11,13 +11,11 @@
   <h3 align="center"> Bakery Store · Panaderia artesanal </h3>
 
   <p align="center">
-    Tienda online para una panaderia artesanal
+    Tienda online de una panaderia artesanal
     <br />
     <a href="https://br1-o.github.io/bakery-store"><strong> Ver sitio en producción »</strong></a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -185,6 +183,15 @@ El logo fue creado usando las herramientas de generación de imagenes de ![Gemin
 </a>
 <a href="https://github.com/user-attachments/assets/43a9ccf5-4f4b-44f1-86c7-640481555d54" target="_blank">
   <img src="https://github.com/user-attachments/assets/43a9ccf5-4f4b-44f1-86c7-640481555d54" alt="documentation-producto2" width="800"/>
+</a>
+
+#### Contacto (path: '/#contacto')
+
+<a href="https://github.com/user-attachments/assets/5299db71-c33f-4387-8c81-1558b19dbcf4" target="_blank">
+  <img src="https://github.com/user-attachments/assets/5299db71-c33f-4387-8c81-1558b19dbcf4" alt="documentation-contact1" width="800"/>
+</a>
+<a href="https://github.com/user-attachments/assets/c1357b49-cb57-4be3-a15d-f7350ce04192" target="_blank">
+  <img src="https://github.com/user-attachments/assets/c1357b49-cb57-4be3-a15d-f7350ce04192" alt="documentation-contact2" width="800"/>
 </a>
 
 #### No encontrado (path: '/[no-válido]')
