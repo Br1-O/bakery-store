@@ -163,22 +163,40 @@ El font usado para este proyecto fue:
 
 El logo fue creado usando las herramientas de generación de imagenes de ![Gemini](https://img.shields.io/badge/Gemini-purple)
 
-## Preview
+## Vista previa
 
-#### Pagina Principal ('/')
-![documentation-main1](https://github.com/user-attachments/assets/60427fe9-9a30-4a34-8dad-bd6b9ce6b439)
-![documentation-main2](https://github.com/user-attachments/assets/9d748898-bf71-4f81-aabf-661218c24f29)
+#### Pagina Principal (path: '/')
 
-#### Tienda ('/#tienda')
-![documentation-shop1](https://github.com/user-attachments/assets/e15435fc-9514-49d5-b75f-a07d16e287f4)
-![documentation-shop3](https://github.com/user-attachments/assets/26a1b725-3d66-4b36-8d92-c443ba03805e)
+<a href="https://github.com/user-attachments/assets/60427fe9-9a30-4a34-8dad-bd6b9ce6b439" target="_blank">
+  <img src="https://github.com/user-attachments/assets/60427fe9-9a30-4a34-8dad-bd6b9ce6b439" alt="documentation-main1" width="800"/>
+</a>
+<a href="https://github.com/user-attachments/assets/9d748898-bf71-4f81-aabf-661218c24f29" target="_blank">
+  <img src="https://github.com/user-attachments/assets/9d748898-bf71-4f81-aabf-661218c24f29" alt="documentation-main2" width="800"/>
+</a>
 
-#### Producto ('/#tienda/[categoria]/[nombre-del-producto]')
-![documentation-producto1](https://github.com/user-attachments/assets/167787e9-65dc-4f9e-9182-917a361a346e)
-![documentation-producto2](https://github.com/user-attachments/assets/43a9ccf5-4f4b-44f1-86c7-640481555d54)
+#### Tienda (path: '/#tienda')
 
-#### No encontrado ('/[no-válido]')
-![documentation-notFound](https://github.com/user-attachments/assets/5f35193f-e7e0-4a9d-beb1-2af650cdef21)
+<a href="https://github.com/user-attachments/assets/e15435fc-9514-49d5-b75f-a07d16e287f4" target="_blank">
+  <img src="https://github.com/user-attachments/assets/e15435fc-9514-49d5-b75f-a07d16e287f4" alt="documentation-shop1" width="800"/>
+</a>
+<a href="https://github.com/user-attachments/assets/26a1b725-3d66-4b36-8d92-c443ba03805e" target="_blank">
+  <img src="https://github.com/user-attachments/assets/26a1b725-3d66-4b36-8d92-c443ba03805e" alt="documentation-shop3" width="800"/>
+</a>
+
+#### Producto (path: '/#tienda/[categoria]/[nombre-del-producto]')
+
+<a href="https://github.com/user-attachments/assets/167787e9-65dc-4f9e-9182-917a361a346e" target="_blank">
+  <img src="https://github.com/user-attachments/assets/167787e9-65dc-4f9e-9182-917a361a346e" alt="documentation-producto1" width="800"/>
+</a>
+<a href="https://github.com/user-attachments/assets/43a9ccf5-4f4b-44f1-86c7-640481555d54" target="_blank">
+  <img src="https://github.com/user-attachments/assets/43a9ccf5-4f4b-44f1-86c7-640481555d54" alt="documentation-producto2" width="800"/>
+</a>
+
+#### No encontrado (path: '/[no-válido]')
+
+<a href="https://github.com/user-attachments/assets/5f35193f-e7e0-4a9d-beb1-2af650cdef21" target="_blank">
+  <img src="https://github.com/user-attachments/assets/5f35193f-e7e0-4a9d-beb1-2af650cdef21" alt="documentation-notFound" width="800"/>
+</a>
 
 <!-- GETTING STARTED -->
 ## Cómo comenzar a utilizarlo
