@@ -24,23 +24,28 @@
   <summary>Tabla de contenido </summary>
   <ol>
     <li>
-      <a href="#about-the-project"> Sobre el proyecto</a>
+      <a href="#about"> Sobre el proyecto</a>
       <ul>
-        <li><a href="#built-with"> Construido con</a></li>
+        <li><a href="develop-with">Desarrollado con</a></li>
+      </ul>
+      <ul>
+        <li><a href="project-structure">Estructura del proyecto </a></li>
+      </ul>
+      <ul>
+        <li><a href="design">Diseño </a></li>
+      </ul>
+      <ul>
+        <li><a href="preview">Vista previa </a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started"> Cómo instalarlo</a>
-      <ul>
-        <li><a href="#prerequisites"> Pre requisitos</a></li>
-        <li><a href="#installation"> Instalación </a></li>
-      </ul>
     </li>
   </ol>
 </details>
 
 
-
+<a id="about"></a>
 <!-- ABOUT THE PROJECT -->
 ## Sobre este proyecto
 
@@ -51,7 +56,7 @@ Originalmente se desarrolló este proyecto bajo el marco de un trabajo integrado
 
 <p align="right">(<a href="#readme-top">Volver al inicio</a>)</p>
 
-
+<a id="develop-with"></a>
 ## Desarrollado con:
 
 Para este proyecto se usaron las siguientes técnologias, lenguajes y librerias:
@@ -81,7 +86,7 @@ Para este proyecto se usaron las siguientes técnologias, lenguajes y librerias:
 
 <p align="right">(<a href="#readme-top">Volver al inicio</a>)</p>
 
-
+<a id="project-structure"></a>
 ## Estructura del Proyecto
 
 La estructura del proyecto está organizada de la siguiente manera:
@@ -142,6 +147,7 @@ De esta forma se evita realizar una nueva petición cada vez que se requieran lo
 
 <p align="right">(<a href="#readme-top">Volver al inicio</a>)</p>
 
+<a id="design"></a>
 ## Diseño
 
 ## Paleta de colores
@@ -163,6 +169,7 @@ El font usado para este proyecto fue:
 
 El logo fue creado usando las herramientas de generación de imagenes de ![Gemini](https://img.shields.io/badge/Gemini-purple)
 
+<a id="preview"></a>
 ## Vista previa
 
 #### Pagina Principal (path: '/')
@@ -198,6 +205,7 @@ El logo fue creado usando las herramientas de generación de imagenes de ![Gemin
   <img src="https://github.com/user-attachments/assets/5f35193f-e7e0-4a9d-beb1-2af650cdef21" alt="documentation-notFound" width="800"/>
 </a>
 
+<a id="getting-started"></a>
 <!-- GETTING STARTED -->
 ## Cómo comenzar a utilizarlo
 
