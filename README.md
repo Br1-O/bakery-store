@@ -187,11 +187,11 @@ El logo fue creado usando las herramientas de generación de imagenes de ![Gemin
 
 #### Contacto (path: '/#contacto')
 
-<a href="https://github.com/user-attachments/assets/5299db71-c33f-4387-8c81-1558b19dbcf4" target="_blank">
-  <img src="https://github.com/user-attachments/assets/5299db71-c33f-4387-8c81-1558b19dbcf4" alt="documentation-contact1" width="800"/>
-</a>
 <a href="https://github.com/user-attachments/assets/c1357b49-cb57-4be3-a15d-f7350ce04192" target="_blank">
-  <img src="https://github.com/user-attachments/assets/c1357b49-cb57-4be3-a15d-f7350ce04192" alt="documentation-contact2" width="800"/>
+  <img src="https://github.com/user-attachments/assets/c1357b49-cb57-4be3-a15d-f7350ce04192" alt="documentation-contact1" width="800"/>
+</a>
+<a href="https://github.com/user-attachments/assets/5299db71-c33f-4387-8c81-1558b19dbcf4" target="_blank">
+  <img src="https://github.com/user-attachments/assets/5299db71-c33f-4387-8c81-1558b19dbcf4" alt="documentation-contact2" width="800"/>
 </a>
 
 #### No encontrado (path: '/[no-válido]')
