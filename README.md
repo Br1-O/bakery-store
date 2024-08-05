@@ -23,24 +23,12 @@
 <details>
   <summary>Tabla de contenido </summary>
   <ol>
-    <li>
-      <a href="#about"> Sobre el proyecto</a>
-      <ul>
-        <li><a href="develop-with">Desarrollado con</a></li>
-      </ul>
-      <ul>
-        <li><a href="project-structure">Estructura del proyecto </a></li>
-      </ul>
-      <ul>
-        <li><a href="design">Diseño </a></li>
-      </ul>
-      <ul>
-        <li><a href="preview">Vista previa </a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started"> Cómo instalarlo</a>
-    </li>
+    <li><a href="#about"> Sobre el proyecto</a></li>
+    <li><a href="#develop-with">Desarrollado con</a></li>
+    <li><a href="#project-structure">Estructura del proyecto </a></li>
+    <li><a href="#design">Diseño </a></li>
+    <li><a href="#preview">Vista previa </a></li>
+    <li><a href="#getting-started"> Cómo instalarlo</a></li>
   </ol>
 </details>
 
