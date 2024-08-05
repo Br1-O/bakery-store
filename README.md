@@ -1,26 +1,5 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a id="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-<!--[![LinkedIn][linkedin-shield]][linkedin-url]-->
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -162,6 +141,27 @@ La clase utilitaria de **ProductsUtils**, y ejecutará el método **initialize()
 De esta forma se evita realizar una nueva petición cada vez que se requieran los datos de los productos, ya que todas las páginas traeran el contenido de productos y marquesinas desde **ProductsUtils.AllProductsList**, que anteriormente habrá realizado la petición a los json emulando la petición inicial a la API.
 
 <p align="right">(<a href="#readme-top">Volver al inicio</a>)</p>
+
+## Diseño
+
+## Paleta de colores
+
+La paleta de colores usada para este proyecto fue:
+
+![Main Color](https://img.shields.io/badge/Main%20Color-rgb(0%2C%200%2C%200)-black) <br>
+![Secondary Color](https://img.shields.io/badge/Secondary%20Color-rgb(67%2C%2075%2C%2082)-darkgrey) <br>
+![Font Primary Color](https://img.shields.io/badge/Font%20Primary%20Color-rgb(237%2C%20236%2C%20238)-lightgrey) <br>
+![Font Secondary Color](https://img.shields.io/badge/Font%20Secondary%20Color-rgb(81%2C%2080%2C%2080)-grey) <br>
+![Footer Background Color](https://img.shields.io/badge/Footer%20Background%20Color-rgb(17%2C%2017%2C%2017)-black) <br>
+
+## Font
+
+El font usado para este proyecto fue: 
+* ![Font: Josefin Sans](https://img.shields.io/badge/Font-Josefin%20Sans-blue)
+
+## Logotipo
+
+El logo fue creado usando las herramientas de generación de imagenes de ![Gemini](https://img.shields.io/badge/Gemini-purple)
 
 <!-- GETTING STARTED -->
 ## Cómo comenzar a utilizarlo
